@@ -47,8 +47,8 @@ const bubbleMenuItems = [
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#001a3a] text-[#F7F7F7] relative font-sans antialiased selection:bg-[#0091CF] selection:text-white">
-      {/* Floating Interactive BubbleMenu from React Bits with SiberMu Colors */}
+    <div className="min-h-screen bg-white text-[#002C5F] relative font-sans antialiased selection:bg-[#0091CF] selection:text-white">
+      {/* Floating Interactive BubbleMenu from React Bits */}
       <BubbleMenu
         logo={
           <span style={{ fontWeight: 800, letterSpacing: '0.05em', color: '#D4A017' }}>

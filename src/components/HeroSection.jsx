@@ -77,12 +77,12 @@ const marqueeCardsColumn2 = [
 export default function HeroSection() {
   return (
     <div className="relative">
-      {/* Upper Hero Section with DonasiTrust-style Marquee Background */}
-      <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#001a3a]">
+      {/* Upper Hero Section with White Base Theme */}
+      <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F7F7F7] to-[#FFFFFF]">
         
-        {/* Animated Background Sliding Cards Marquee (DonasiTrust Pattern) */}
+        {/* Animated Background Sliding Cards Marquee (DonasiTrust Style in Light Mode) */}
         <div
-          className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4"
+          className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-25 select-none flex justify-center lg:justify-end gap-6 p-4"
           style={{ transform: 'rotate(-20deg) scale(1.35)' }}
         >
           {/* Column 1: Scrolls Up */}
@@ -90,23 +90,22 @@ export default function HeroSection() {
             {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-[#002C5F] shadow-xl w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] bg-white shadow-lg w-64 shrink-0"
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
+                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-black/30 pointer-events-none" />
                   <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
-                    <span className="rounded bg-[#0091CF] px-2 py-0.5 text-[9px] font-extrabold text-white uppercase">
+                    <span className="rounded bg-[#0091CF] px-2 py-0.5 text-[9px] font-extrabold text-white uppercase shadow-sm">
                       {cmp.category}
                     </span>
-                    <span className="rounded bg-black/70 px-2 py-0.5 text-[9px] font-bold text-[#D4A017] uppercase border border-white/10">
+                    <span className="rounded bg-[#002C5F] px-2 py-0.5 text-[9px] font-bold text-[#D4A017] uppercase">
                       {cmp.tag}
                     </span>
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs font-bold text-white line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  <h3 className="text-xs font-bold text-[#002C5F] line-clamp-1">{cmp.title}</h3>
+                  <p className="mt-1 text-[11px] text-[#475569] line-clamp-1">{cmp.desc}</p>
                 </div>
               </div>
             ))}
@@ -117,23 +116,22 @@ export default function HeroSection() {
             {[...marqueeCardsColumn2, ...marqueeCardsColumn2].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-[#002C5F] shadow-xl w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] bg-white shadow-lg w-64 shrink-0"
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
+                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-black/30 pointer-events-none" />
                   <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
-                    <span className="rounded bg-[#D4A017] px-2 py-0.5 text-[9px] font-extrabold text-slate-950 uppercase">
+                    <span className="rounded bg-[#D4A017] px-2 py-0.5 text-[9px] font-extrabold text-white uppercase shadow-sm">
                       {cmp.category}
                     </span>
-                    <span className="rounded bg-black/70 px-2 py-0.5 text-[9px] font-bold text-[#0091CF] uppercase border border-white/10">
+                    <span className="rounded bg-[#002C5F] px-2 py-0.5 text-[9px] font-bold text-[#0091CF] uppercase">
                       {cmp.tag}
                     </span>
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs font-bold text-white line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  <h3 className="text-xs font-bold text-[#002C5F] line-clamp-1">{cmp.title}</h3>
+                  <p className="mt-1 text-[11px] text-[#475569] line-clamp-1">{cmp.desc}</p>
                 </div>
               </div>
             ))}
@@ -144,31 +142,30 @@ export default function HeroSection() {
             {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-[#002C5F] shadow-xl w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] bg-white shadow-lg w-64 shrink-0"
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
+                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-black/30 pointer-events-none" />
                   <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
-                    <span className="rounded bg-[#0091CF] px-2 py-0.5 text-[9px] font-extrabold text-white uppercase">
+                    <span className="rounded bg-[#0091CF] px-2 py-0.5 text-[9px] font-extrabold text-white uppercase shadow-sm">
                       {cmp.category}
                     </span>
-                    <span className="rounded bg-black/70 px-2 py-0.5 text-[9px] font-bold text-white uppercase border border-white/10">
+                    <span className="rounded bg-[#002C5F] px-2 py-0.5 text-[9px] font-bold text-white uppercase">
                       {cmp.tag}
                     </span>
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs font-bold text-white line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  <h3 className="text-xs font-bold text-[#002C5F] line-clamp-1">{cmp.title}</h3>
+                  <p className="mt-1 text-[11px] text-[#475569] line-clamp-1">{cmp.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Ambient Glow Backdrop (DonasiTrust Style) */}
-        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[650px] rounded-full bg-gradient-to-tr from-[#0091CF]/25 via-[#002C5F]/40 to-[#D4A017]/20 blur-[130px] z-1" />
+        {/* Ambient Radial Backlight Glow */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] rounded-full bg-gradient-to-tr from-[#0091CF]/15 via-[#D4A017]/10 to-transparent blur-[140px] z-1" />
 
         {/* Foreground Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -178,10 +175,10 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#002C5F]/90 border border-[#0091CF]/40 text-xs font-semibold text-[#0091CF] backdrop-blur-md shadow-lg shadow-[#0091CF]/10"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F7F7] border border-[#0091CF]/40 text-xs font-bold text-[#002C5F] shadow-sm"
             >
               <Sparkles className="w-4 h-4 text-[#D4A017] animate-pulse" />
-              <span className="text-[#F7F7F7]">{siteConfig.heroBadge}</span>
+              <span>{siteConfig.heroBadge}</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -189,7 +186,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#002C5F] leading-[1.15]"
             >
               Sinergi Kemahasiswaan &{' '}
               <span className="text-gradient-gold">AIK Berkemajuan</span>
@@ -200,7 +197,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base sm:text-lg text-[#E6E6E6] font-normal leading-relaxed"
+              className="text-base sm:text-lg text-[#334155] font-medium leading-relaxed"
             >
               {siteConfig.description}
             </motion.p>
@@ -214,29 +211,29 @@ export default function HeroSection() {
             >
               <a
                 href="#kemahasiswaan"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-[#0091CF] text-white hover:bg-[#007ab3] transition-all shadow-lg shadow-[#0091CF]/30 hover:shadow-[#0091CF]/50 hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-[#0091CF] text-white hover:bg-[#007ab3] transition-all shadow-lg shadow-[#0091CF]/25 hover:shadow-[#0091CF]/40 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>{siteConfig.ctaPrimary}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#aik"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-[#002C5F]/90 text-[#F7F7F7] border border-[#D4A017]/40 hover:border-[#D4A017] hover:text-white transition-all backdrop-blur-md hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-white text-[#002C5F] border border-[#002C5F]/30 hover:border-[#D4A017] hover:bg-[#F7F7F7] transition-all shadow-sm hover:-translate-y-0.5"
               >
                 <Compass className="w-4 h-4 text-[#D4A017]" />
                 <span>{siteConfig.ctaSecondary}</span>
               </a>
             </motion.div>
 
-            {/* Trust Checklist (DonasiTrust Style) */}
+            {/* Trust Checklist */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-2 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-semibold text-[#E6E6E6]"
+              className="pt-2 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-bold text-[#002C5F]"
             >
               <div className="flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/20 text-[#0091CF] font-black text-xs">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/15 text-[#0091CF] font-black text-xs">
                   ✓
                 </span>
                 <span>Pembelajaran 100% Siber</span>
@@ -248,7 +245,7 @@ export default function HeroSection() {
                 <span>Terverifikasi AIK</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/20 text-[#0091CF] font-black text-xs">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/15 text-[#0091CF] font-black text-xs">
                   ✓
                 </span>
                 <span>Pembinaan Berkelanjutan</span>
@@ -266,12 +263,12 @@ export default function HeroSection() {
             {statsData.map((stat, idx) => (
               <div
                 key={idx}
-                className="glass-card p-4 sm:p-6 rounded-2xl text-center border border-[#E6E6E6]/10"
+                className="glass-card p-4 sm:p-6 rounded-2xl text-center border border-[#E6E6E6] bg-white shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="text-2xl sm:text-3xl font-extrabold text-gradient-blue mb-1">
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#0091CF] mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs sm:text-sm text-[#E6E6E6]/80 font-medium">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-[#475569] font-semibold">{stat.label}</div>
               </div>
             ))}
           </motion.div>
