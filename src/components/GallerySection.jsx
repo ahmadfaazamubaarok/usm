@@ -6,18 +6,18 @@ import { galleryItemsData } from '../data/content';
 
 export default function GallerySection() {
   return (
-    <section id="galeri" className="py-24 relative bg-[#F7F7F7] border-t border-[#E6E6E6]">
+    <section id="galeri" className="py-24 relative bg-[#F7F7F7] dark:bg-[#002C5F]/95 border-t border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#0091CF]/30 text-xs font-bold text-[#0091CF] shadow-sm mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#002C5F] border border-[#0091CF]/30 text-xs font-bold text-[#0091CF] shadow-sm mb-4">
             <Images className="w-3.5 h-3.5" />
             <span>Dokumentasi Kegiatan</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#002C5F] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#002C5F] dark:text-white tracking-tight mb-4">
             Galeri Aktivitas Mahasiswa & AIK
           </h2>
-          <p className="text-[#475569] text-base sm:text-lg font-medium">
+          <p className="text-[#475569] dark:text-[#E6E6E6]/90 text-base sm:text-lg font-medium">
             Potret dinamika kehidupan kampus siber, pembinaan akhlak, dan prestasi mahasiswa Universitas SiberMu.
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-4 sm:p-6 rounded-3xl border border-[#E6E6E6] shadow-sm"
+          className="bg-white dark:bg-[#001a3a] p-4 sm:p-6 rounded-3xl border border-[#E6E6E6] dark:border-[#0091CF]/30 shadow-sm"
         >
           <AccordionGallery
             items={galleryItemsData}

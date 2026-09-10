@@ -48,17 +48,17 @@ export default function KemahasiswaanSection() {
     kemahasiswaanData.categories[0];
 
   return (
-    <section id="kemahasiswaan" className="py-24 relative bg-[#F7F7F7] border-t border-b border-[#E6E6E6]">
+    <section id="kemahasiswaan" className="py-24 relative bg-[#F7F7F7] dark:bg-[#001e42] border-t border-b border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#0091CF]/30 text-xs font-bold text-[#0091CF] shadow-sm mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#002C5F] border border-[#0091CF]/30 text-xs font-bold text-[#0091CF] shadow-sm mb-4">
             <span>Biro Kemahasiswaan SiberMu</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#002C5F] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#002C5F] dark:text-white tracking-tight mb-4">
             {kemahasiswaanData.title}
           </h2>
-          <p className="text-[#475569] text-base sm:text-lg font-medium">
+          <p className="text-[#475569] dark:text-[#E6E6E6]/90 text-base sm:text-lg font-medium">
             {kemahasiswaanData.subtitle}
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function KemahasiswaanSection() {
                 className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${
                   isActive
                     ? 'bg-gradient-to-r from-[#0091CF] to-[#002C5F] text-white shadow-lg shadow-[#0091CF]/25 scale-105'
-                    : 'bg-white text-[#002C5F] border border-[#E6E6E6] hover:border-[#0091CF] hover:bg-white shadow-sm'
+                    : 'bg-white dark:bg-[#002550] text-[#002C5F] dark:text-[#E6E6E6] border border-[#E6E6E6] dark:border-white/10 hover:border-[#0091CF] shadow-sm'
                 }`}
               >
                 <IconComp className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#0091CF]'}`} />
@@ -87,7 +87,7 @@ export default function KemahasiswaanSection() {
         </div>
 
         {/* Tab Description */}
-        <div className="text-center max-w-2xl mx-auto mb-10 text-[#334155] text-sm sm:text-base font-semibold">
+        <div className="text-center max-w-2xl mx-auto mb-10 text-[#334155] dark:text-[#F7F7F7] text-sm sm:text-base font-semibold">
           {activeCategory.description}
         </div>
 
@@ -107,7 +107,7 @@ export default function KemahasiswaanSection() {
               return (
                 <div
                   key={idx}
-                  className="bg-white p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between border border-[#E6E6E6] shadow-sm hover:shadow-xl hover:border-[#0091CF]/40"
+                  className="bg-white dark:bg-[#002550] p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between border border-[#E6E6E6] dark:border-white/15 shadow-sm hover:shadow-xl hover:border-[#0091CF]/40"
                 >
                   {/* Subtle Card Background Accent Glow */}
                   <div
@@ -115,7 +115,7 @@ export default function KemahasiswaanSection() {
                   />
 
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-[#F7F7F7] border border-[#0091CF]/30 flex items-center justify-center mb-6 text-[#0091CF] group-hover:scale-110 group-hover:bg-[#002C5F] group-hover:text-white transition-all">
+                    <div className="w-12 h-12 rounded-2xl bg-[#F7F7F7] dark:bg-[#002C5F] border border-[#0091CF]/30 flex items-center justify-center mb-6 text-[#0091CF] group-hover:scale-110 group-hover:bg-[#002C5F] group-hover:text-white transition-all">
                       <ItemIcon className="w-6 h-6" />
                     </div>
 
@@ -123,16 +123,16 @@ export default function KemahasiswaanSection() {
                       {item.type}
                     </div>
 
-                    <h3 className="text-xl font-extrabold text-[#002C5F] mb-3 group-hover:text-[#0091CF] transition-colors">
+                    <h3 className="text-xl font-extrabold text-[#002C5F] dark:text-white mb-3 group-hover:text-[#0091CF] transition-colors">
                       {item.name}
                     </h3>
 
-                    <p className="text-[#475569] text-sm leading-relaxed mb-6 font-medium">
+                    <p className="text-[#475569] dark:text-[#E6E6E6]/80 text-sm leading-relaxed mb-6 font-medium">
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#E6E6E6] flex items-center justify-between text-xs font-bold text-[#002C5F] group-hover:text-[#0091CF] transition-colors">
+                  <div className="pt-4 border-t border-[#E6E6E6] dark:border-white/10 flex items-center justify-between text-xs font-bold text-[#002C5F] dark:text-[#E6E6E6] group-hover:text-[#0091CF] transition-colors">
                     <span>Lihat Informasi Detail</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

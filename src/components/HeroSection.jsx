@@ -77,12 +77,12 @@ const marqueeCardsColumn2 = [
 export default function HeroSection() {
   return (
     <div className="relative">
-      {/* Upper Hero Section with White Base Theme */}
-      <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F7F7F7] to-[#FFFFFF]">
+      {/* Upper Hero Section with Dynamic Dark/Light Theme Support */}
+      <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-[#F7F7F7] to-white dark:from-[#001a3a] dark:via-[#002550] dark:to-[#001a3a] transition-colors duration-300">
         
-        {/* Animated Background Sliding Cards Marquee (DonasiTrust Style in Light Mode) */}
+        {/* Animated Background Sliding Cards Marquee */}
         <div
-          className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-25 select-none flex justify-center lg:justify-end gap-6 p-4"
+          className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-20 dark:opacity-25 select-none flex justify-center lg:justify-end gap-6 p-4"
           style={{ transform: 'rotate(-20deg) scale(1.35)' }}
         >
           {/* Column 1: Scrolls Up */}
@@ -90,7 +90,7 @@ export default function HeroSection() {
             {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] bg-white shadow-lg w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-lg w-64 shrink-0"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
@@ -104,8 +104,8 @@ export default function HeroSection() {
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs font-bold text-[#002C5F] line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#475569] line-clamp-1">{cmp.desc}</p>
+                  <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
+                  <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
                 </div>
               </div>
             ))}
@@ -116,12 +116,12 @@ export default function HeroSection() {
             {[...marqueeCardsColumn2, ...marqueeCardsColumn2].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] bg-white shadow-lg w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-lg w-64 shrink-0"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
                   <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10">
-                    <span className="rounded bg-[#D4A017] px-2 py-0.5 text-[9px] font-extrabold text-white uppercase shadow-sm">
+                    <span className="rounded bg-[#D4A017] px-2 py-0.5 text-[9px] font-extrabold text-slate-950 uppercase shadow-sm">
                       {cmp.category}
                     </span>
                     <span className="rounded bg-[#002C5F] px-2 py-0.5 text-[9px] font-bold text-[#0091CF] uppercase">
@@ -130,8 +130,8 @@ export default function HeroSection() {
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs font-bold text-[#002C5F] line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#475569] line-clamp-1">{cmp.desc}</p>
+                  <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
+                  <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
                 </div>
               </div>
             ))}
@@ -142,7 +142,7 @@ export default function HeroSection() {
             {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] bg-white shadow-lg w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-lg w-64 shrink-0"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
@@ -156,8 +156,8 @@ export default function HeroSection() {
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs font-bold text-[#002C5F] line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#475569] line-clamp-1">{cmp.desc}</p>
+                  <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
+                  <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
                 </div>
               </div>
             ))}
@@ -175,7 +175,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F7F7] border border-[#0091CF]/40 text-xs font-bold text-[#002C5F] shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F7F7] dark:bg-[#002C5F]/90 border border-[#0091CF]/40 text-xs font-bold text-[#002C5F] dark:text-[#0091CF] shadow-sm backdrop-blur-md"
             >
               <Sparkles className="w-4 h-4 text-[#D4A017] animate-pulse" />
               <span>{siteConfig.heroBadge}</span>
@@ -186,7 +186,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#002C5F] leading-[1.15]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#002C5F] dark:text-white leading-[1.15]"
             >
               Sinergi Kemahasiswaan &{' '}
               <span className="text-gradient-gold">AIK Berkemajuan</span>
@@ -197,7 +197,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base sm:text-lg text-[#334155] font-medium leading-relaxed"
+              className="text-base sm:text-lg text-[#334155] dark:text-[#E6E6E6] font-medium leading-relaxed"
             >
               {siteConfig.description}
             </motion.p>
@@ -218,7 +218,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="#aik"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-white text-[#002C5F] border border-[#002C5F]/30 hover:border-[#D4A017] hover:bg-[#F7F7F7] transition-all shadow-sm hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-white dark:bg-[#002C5F]/90 text-[#002C5F] dark:text-[#F7F7F7] border border-[#002C5F]/30 dark:border-[#D4A017]/40 hover:border-[#D4A017] hover:bg-[#F7F7F7] dark:hover:bg-[#002550] transition-all shadow-sm hover:-translate-y-0.5"
               >
                 <Compass className="w-4 h-4 text-[#D4A017]" />
                 <span>{siteConfig.ctaSecondary}</span>
@@ -230,10 +230,10 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-2 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-bold text-[#002C5F]"
+              className="pt-2 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-bold text-[#002C5F] dark:text-[#E6E6E6]"
             >
               <div className="flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/15 text-[#0091CF] font-black text-xs">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/20 text-[#0091CF] font-black text-xs">
                   ✓
                 </span>
                 <span>Pembelajaran 100% Siber</span>
@@ -245,7 +245,7 @@ export default function HeroSection() {
                 <span>Terverifikasi AIK</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/15 text-[#0091CF] font-black text-xs">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/20 text-[#0091CF] font-black text-xs">
                   ✓
                 </span>
                 <span>Pembinaan Berkelanjutan</span>
@@ -263,12 +263,12 @@ export default function HeroSection() {
             {statsData.map((stat, idx) => (
               <div
                 key={idx}
-                className="glass-card p-4 sm:p-6 rounded-2xl text-center border border-[#E6E6E6] bg-white shadow-sm hover:shadow-md transition-shadow"
+                className="glass-card p-4 sm:p-6 rounded-2xl text-center border border-[#E6E6E6] dark:border-white/10 bg-white dark:bg-[#002550] shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="text-2xl sm:text-3xl font-extrabold text-[#0091CF] mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs sm:text-sm text-[#475569] font-semibold">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-[#475569] dark:text-[#E6E6E6]/80 font-semibold">{stat.label}</div>
               </div>
             ))}
           </motion.div>

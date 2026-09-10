@@ -1,5 +1,6 @@
 import React from 'react';
 import BubbleMenu from './components/BubbleMenu';
+import ThemeToggle from './components/ThemeToggle';
 import HeroSection from './components/HeroSection';
 import KemahasiswaanSection from './components/KemahasiswaanSection';
 import TransitionSection from './components/TransitionSection';
@@ -47,7 +48,10 @@ const bubbleMenuItems = [
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-[#002C5F] relative font-sans antialiased selection:bg-[#0091CF] selection:text-white">
+    <div className="min-h-screen relative font-sans antialiased selection:bg-[#0091CF] selection:text-white transition-colors duration-300">
+      {/* Fixed Circular Reveal Theme Toggle Button (DonasiTrust Style) */}
+      <ThemeToggle />
+
       {/* Floating Interactive BubbleMenu from React Bits */}
       <BubbleMenu
         logo={
