@@ -16,8 +16,7 @@ import {
   Globe,
   GraduationCap,
   HeartPulse,
-  Briefcase,
-  ArrowUpRight
+  Briefcase
 } from 'lucide-react';
 import { kemahasiswaanData } from '../data/content';
 
@@ -152,9 +151,8 @@ export default function KemahasiswaanSection() {
                         whileHover={{ scale: 1.05, rotate: 0, zIndex: 20 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: itemIdx * 0.08 }}
-                        className={`p-6 sm:p-7 rounded-3xl border-2 ${theme.borderColor} ${theme.bgColor} shadow-xl relative group transition-all duration-300 flex flex-col justify-between cursor-pointer min-h-[300px]`}
+                        className={`p-6 sm:p-7 rounded-3xl border-2 ${theme.borderColor} ${theme.bgColor} shadow-xl relative group transition-all duration-300 flex flex-col justify-between min-h-[260px]`}
                       >
-                        <div>
                           {/* Top Card Badge & Year */}
                           <div className="flex items-center justify-between mb-5">
                             <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${theme.badgeBg}`}>
@@ -176,17 +174,10 @@ export default function KemahasiswaanSection() {
                           </h3>
 
                           {/* Description */}
-                          <p className={`text-xs font-semibold ${theme.textColor} mb-4 leading-relaxed`}>
+                          <p className={`text-xs sm:text-sm font-semibold ${theme.textColor} leading-relaxed`}>
                             {item.desc}
                           </p>
-                        </div>
-
-                        {/* Card Footer */}
-                        <div className="pt-4 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-bold text-[#475569] dark:text-[#E6E6E6]/80">
-                          <span>Eksplorasi Program</span>
-                          <ArrowUpRight className="w-4 h-4 shrink-0 text-[#0091CF] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                        </div>
-                      </motion.div>
+                        </motion.div>
                     );
                   })}
                 </div>

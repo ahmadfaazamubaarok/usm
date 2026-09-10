@@ -31,7 +31,7 @@ const bubbleMenuItems = [
   },
   {
     label: 'Prestasi',
-    href: '#prestasi',
+    href: '#kemahasiswaan',
     ariaLabel: 'Prestasi Mahasiswa',
     rotation: -6,
     hoverStyles: { bgColor: '#38B2AC', textColor: '#ffffff' }

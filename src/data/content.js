@@ -6,7 +6,7 @@ export const siteConfig = {
   university: "Universitas Siber Muhammadiyah (SiberMu)",
   tagline: "Unggul, Digital, & Berkemajuan",
   description: "Wadah pengembangan potensi mahasiswa SiberMu melalui sinergi aktivitas kemahasiswaan modern dan penguatan nilai Al-Islam & Kemuhammadiyahan berbasis siber.",
-  heroBadge: "Lomba Kreativitas Digital SiberMu 2026",
+  heroBadge: "Portal Resmi Biro Kemahasiswaan & AIK",
   ctaPrimary: "Jelajahi Kemahasiswaan",
   ctaSecondary: "Pelajari Program AIK",
   universityUrl: "https://sibermu.ac.id",
