@@ -233,7 +233,6 @@ export default function HeroSection() {
         <ScrollExpand
           src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80"
           alt="Kampus SiberMu Digital Studio"
-          title="Universitas Siber Muhammadiyah"
           scrollHint="Gulir ke bawah untuk eksplorasi"
           useWindowScroll
           scrollDistance={1.0}
