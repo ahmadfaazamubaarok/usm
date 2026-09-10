@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Compass } from 'lucide-react';
-import { statsData } from '../data/content';
 import ScrollExpand from './ScrollExpand';
 
 const marqueeCardsColumn1 = [
@@ -202,26 +201,6 @@ export default function HeroSection() {
             </motion.div>
 
           </div>
-
-          {/* Minimal Stats Grid Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mt-12"
-          >
-            {statsData.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-2xl border border-[#E6E6E6] dark:border-white/10 bg-white/90 dark:bg-[#002550]/90 shadow-sm transition-all"
-              >
-                <div className="text-2xl sm:text-3xl font-black text-[#0091CF] dark:text-[#38bdf8] mb-0.5">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-[#475569] dark:text-[#E6E6E6]/80 font-bold">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
