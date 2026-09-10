@@ -3,6 +3,7 @@ import BubbleMenu from './components/BubbleMenu';
 import HeroSection from './components/HeroSection';
 import KemahasiswaanSection from './components/KemahasiswaanSection';
 import AikSection from './components/AikSection';
+import ServicesSection from './components/ServicesSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
 
@@ -27,6 +28,13 @@ const bubbleMenuItems = [
     ariaLabel: 'AIK',
     rotation: 6,
     hoverStyles: { bgColor: '#38B2AC', textColor: '#ffffff' }
+  },
+  {
+    label: 'Layanan',
+    href: '#layanan',
+    ariaLabel: 'Layanan Kampus Digital',
+    rotation: -6,
+    hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
   },
   {
     label: 'Prestasi',
@@ -74,6 +82,7 @@ export default function App() {
         <HeroSection />
         <KemahasiswaanSection />
         <AikSection />
+        <ServicesSection />
         <GallerySection />
       </main>
 
