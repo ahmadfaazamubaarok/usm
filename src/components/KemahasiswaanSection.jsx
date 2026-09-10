@@ -51,35 +51,17 @@ export default function KemahasiswaanSection() {
   return (
     <section id="kemahasiswaan" className="py-24 relative bg-[#F7F7F7] dark:bg-[#001e42] border-t border-b border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with React Bits SplitText */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#002C5F] border border-[#0091CF]/30 text-xs font-bold text-[#0091CF] shadow-sm mb-4">
-            <span>Biro Kemahasiswaan SiberMu</span>
-          </div>
-
+        {/* Simplified Header with Large "Kemahasiswaan" SplitText */}
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <SplitText
             tag="h2"
-            text={kemahasiswaanData.title}
-            className="text-3xl sm:text-4xl font-extrabold text-[#002C5F] dark:text-white tracking-tight mb-4 block text-center"
-            delay={40}
+            text="Kemahasiswaan"
+            className="text-5xl sm:text-7xl lg:text-8xl font-black text-[#002C5F] dark:text-white tracking-tight block text-center"
+            delay={50}
             duration={0.8}
             ease="power3.out"
             splitType="chars"
-            from={{ opacity: 0, y: 35 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            textAlign="center"
-          />
-
-          <SplitText
-            tag="p"
-            text={kemahasiswaanData.subtitle}
-            className="text-[#475569] dark:text-[#E6E6E6]/90 text-base sm:text-lg font-medium block text-center max-w-2xl mx-auto"
-            delay={20}
-            duration={0.8}
-            ease="power3.out"
-            splitType="words"
-            from={{ opacity: 0, y: 25 }}
+            from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}
             textAlign="center"
