@@ -59,14 +59,9 @@ export default function App() {
       {/* Floating Interactive BubbleMenu from React Bits */}
       <BubbleMenu
         logo={
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-[#0091CF] flex items-center justify-center font-extrabold text-white text-xs shadow-md">
-              SM
-            </div>
-            <div className="flex flex-col text-left leading-none">
-              <span className="font-black text-sm tracking-tight text-white">SiberMu</span>
-              <span className="text-[10px] font-semibold text-[#38B2AC] tracking-wider uppercase">Kemahasiswaan &amp; AIK</span>
-            </div>
+          <div className="flex items-center gap-2.5">
+            <img src="/logo-muhammadiyah.png" alt="Logo SiberMu" className="w-7 h-7 object-contain drop-shadow" />
+            <span className="font-black text-base tracking-tight text-white">SiberMu</span>
           </div>
         }
         items={bubbleMenuItems}

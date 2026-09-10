@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  ShieldCheck,
   Mail,
   Phone,
   MapPin,
@@ -60,9 +59,7 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0091CF] to-[#002C5F] flex items-center justify-center shadow-lg shadow-[#0091CF]/30 border border-[#0091CF]/40">
-                <ShieldCheck className="w-6 h-6 text-white stroke-[2.5]" />
-              </div>
+              <img src="/logo-muhammadiyah.png" alt="Logo SiberMu" className="w-9 h-9 object-contain drop-shadow" />
               <span className="text-lg font-bold text-white tracking-wide">
                 {siteConfig.title}
               </span>
