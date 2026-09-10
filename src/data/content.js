@@ -209,9 +209,10 @@ export const galleryItemsData = [
 
 export const footerData = {
   contacts: {
-    address: "Jl. KH. Ahmad Dahlan No. 1, Yogyakarta & Kampus Siber Utama",
-    email: "kemahasiswaan.aik@sibermu.ac.id",
-    phone: "+62 812-3456-7890",
+    address: "Jalan HOS Cokroaminoto No. 17 RT 53 RW 12, Kota Yogyakarta, DI Yogyakarta 55253",
+    skLicense: "Izin Operasional: Keputusan Mendikbudristek No. 430/E/O/2021 | Akreditasi: BAIK",
+    email: "humas@sibermu.ac.id / kemahasiswaan.aik@sibermu.ac.id",
+    phone: "+62 895-3185-1105 (WhatsApp)",
     hours: "Senin - Jumat | 08:00 - 16:00 WIB"
   },
   socials: [

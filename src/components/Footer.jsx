@@ -148,6 +148,12 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-[#0091CF] shrink-0 mt-0.5" />
                 <span>{footerData.contacts.address}</span>
               </li>
+              {footerData.contacts.skLicense && (
+                <li className="flex items-start gap-3 text-xs text-[#38B2AC] font-semibold">
+                  <Award className="w-4 h-4 text-[#38B2AC] shrink-0 mt-0.5" />
+                  <span>{footerData.contacts.skLicense}</span>
+                </li>
+              )}
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#0091CF] shrink-0" />
                 <span>{footerData.contacts.email}</span>
