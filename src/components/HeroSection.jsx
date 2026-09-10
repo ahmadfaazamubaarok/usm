@@ -4,73 +4,117 @@ import { ArrowUpRight, Compass } from 'lucide-react';
 import ScrollExpand from './ScrollExpand';
 import SplitText from './SplitText';
 
-const marqueeCardsColumn1 = [
+const textMarqueeColumn1 = [
   {
     title: 'BEM Universitas SiberMu',
     category: 'ORMAWA',
     tag: 'Badan Eksekutif',
-    desc: 'Penggerak inovasi & kolaborasi sains siber.',
-    img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80',
-    color: '#0091CF'
+    desc: 'Organisasi tertinggi mahasiswa penggerak inovasi & kolaborasi sains siber.',
+    borderColor: 'border-[#0091CF]/40',
+    bgColor: 'bg-[#F0F9FF] dark:bg-[#071D2D]',
+    badgeBg: 'bg-[#0091CF] text-white'
   },
   {
     title: 'Cyber Security & AI Club',
     category: 'UKM',
     tag: 'Riset & Teknologi',
-    desc: 'Komunitas keamanan siber & etikal hacking.',
-    img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80',
-    color: '#38B2AC'
+    desc: 'Komunitas riset keamanan siber, kecerdasan buatan, dan etikal hacking.',
+    borderColor: 'border-[#38B2AC]/40',
+    bgColor: 'bg-[#E6FFFA] dark:bg-[#083835]',
+    badgeBg: 'bg-[#38B2AC] text-white'
   },
   {
-    title: 'Juara 1 Gemastik Siber 2025',
+    title: 'Juara 1 Gemastik Kode & Siber 2025',
     category: 'PRESTASI',
-    tag: 'Nasional',
-    desc: 'Penghargaan Cyber Security Challenge.',
-    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80',
-    color: '#0091CF'
+    tag: 'Tingkat Nasional',
+    desc: 'Tim SiberTekno meraih penghargaan utama kategori Cyber Security Challenge.',
+    borderColor: 'border-[#8b5cf6]/40',
+    bgColor: 'bg-[#F5F3FF] dark:bg-[#1E1535]',
+    badgeBg: 'bg-[#8b5cf6] text-white'
   },
   {
-    title: 'Kajian Virtual Fiqh Siber',
-    category: 'AIK',
-    tag: 'Intelektual',
-    desc: 'Diskusi etika AI & keislaman modern.',
-    img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80',
-    color: '#38B2AC'
-  }
-];
-
-const marqueeCardsColumn2 = [
+    title: 'Portal Beasiswa SiberMu',
+    category: 'LAYANAN',
+    tag: 'Kesejahteraan',
+    desc: 'Akses informasi & pendaftaran Beasiswa Sang Surya, KIP-K, dan Mitra Industri.',
+    borderColor: 'border-[#10b981]/40',
+    bgColor: 'bg-[#ECFDF5] dark:bg-[#062419]',
+    badgeBg: 'bg-[#10b981] text-white'
+  },
   {
-    title: 'Baitul Arqam Mahasiswa',
-    category: 'AIK',
-    tag: 'Kemuhammadiyahan',
-    desc: 'Penguatan karakter & kepemimpinan.',
-    img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
-    color: '#38B2AC'
+    title: 'DPM SiberMu',
+    category: 'ORMAWA',
+    tag: 'Dewan Perwakilan',
+    desc: 'Lembaga legislatif dan pengawasan aspirasi seluruh mahasiswa.',
+    borderColor: 'border-[#0091CF]/40',
+    bgColor: 'bg-[#F0F9FF] dark:bg-[#071D2D]',
+    badgeBg: 'bg-[#0091CF] text-white'
   },
   {
     title: 'SiberMu Media & Esports',
     category: 'UKM',
-    tag: 'Kreatif & E-sports',
-    desc: 'Penyiaran konten & e-sports pro.',
-    img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80',
-    color: '#0091CF'
-  },
+    tag: 'Seni & E-sports',
+    desc: 'Pengembangan penyiaran konten kreatif dan atlet e-sports profesional.',
+    borderColor: 'border-[#38B2AC]/40',
+    bgColor: 'bg-[#E6FFFA] dark:bg-[#083835]',
+    badgeBg: 'bg-[#38B2AC] text-white'
+  }
+];
+
+const textMarqueeColumn2 = [
   {
     title: 'IMM SiberMu',
     category: 'ORMAWA',
     tag: 'Otonom Muhammadiyah',
-    desc: 'Intelektualitas & kaderisasi siber.',
-    img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80',
-    color: '#0091CF'
+    desc: 'Organisasi otonom kader persyarikatan dalam bingkai ketaqwaan & intelektualitas.',
+    borderColor: 'border-[#0091CF]/40',
+    bgColor: 'bg-[#F0F9FF] dark:bg-[#071D2D]',
+    badgeBg: 'bg-[#0091CF] text-white'
   },
   {
-    title: 'National AI Hackathon 2025',
+    title: 'SiberMu Innovation Hub',
+    category: 'UKM',
+    tag: 'Kewirausahaan',
+    desc: 'Inkubator startup digital mahasiswa berbasis teknologi berkemajuan.',
+    borderColor: 'border-[#38B2AC]/40',
+    bgColor: 'bg-[#E6FFFA] dark:bg-[#083835]',
+    badgeBg: 'bg-[#38B2AC] text-white'
+  },
+  {
+    title: 'Juara 2 National AI Hackathon 2025',
     category: 'PRESTASI',
-    tag: 'Juara 2',
-    desc: 'Solusi AI mitigasi bencana.',
-    img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80',
-    color: '#38B2AC'
+    tag: 'Tingkat Nasional',
+    desc: 'Inovasi solusi AI untuk mitigasi bencana banjir berbasis IoT.',
+    borderColor: 'border-[#8b5cf6]/40',
+    bgColor: 'bg-[#F5F3FF] dark:bg-[#1E1535]',
+    badgeBg: 'bg-[#8b5cf6] text-white'
+  },
+  {
+    title: 'e-Counseling & Mental Health',
+    category: 'LAYANAN',
+    tag: 'Konseling Privat',
+    desc: 'Layanan konsultasi psikologi online bersama konselor profesional secara privat.',
+    borderColor: 'border-[#10b981]/40',
+    bgColor: 'bg-[#ECFDF5] dark:bg-[#062419]',
+    badgeBg: 'bg-[#10b981] text-white'
+  },
+  {
+    title: 'Best Presenter InMuTech International',
+    category: 'PRESTASI',
+    tag: 'Internasional',
+    desc: 'Presentasi riset edutech inklusif bagi penyandang disabilitas.',
+    borderColor: 'border-[#8b5cf6]/40',
+    bgColor: 'bg-[#F5F3FF] dark:bg-[#1E1535]',
+    badgeBg: 'bg-[#8b5cf6] text-white'
+  },
+  {
+    title: 'Career & Talent Development',
+    category: 'LAYANAN',
+    tag: 'Karier & Magang',
+    desc: 'Pusat magang siber, sertifikasi kompetensi, dan penyaluran kerja lulusan.',
+    borderColor: 'border-[#10b981]/40',
+    bgColor: 'bg-[#ECFDF5] dark:bg-[#062419]',
+    badgeBg: 'bg-[#10b981] text-white'
   }
 ];
 
@@ -81,7 +125,7 @@ export default function HeroSection() {
     offset: ['start start', 'end start']
   });
 
-  // Lightweight mobile-optimized opacity fade (No heavy CSS blur)
+  // Lightweight mobile-optimized opacity fade
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.15]);
 
   // ALL text components slide LEFT (-X), ALL card components slide RIGHT (+X)
@@ -99,24 +143,33 @@ export default function HeroSection() {
           style={{ opacity }}
           className="w-full relative z-10 origin-center"
         >
-          {/* Background Sliding Cards Marquee - Lifted Higher Up + Slides RIGHT (+X) */}
+          {/* Background Sliding Text Cards Marquee (No Images, Pure Text Cards matching Kemahasiswaan data) */}
           <motion.div
-            className="absolute -top-72 bottom-0 lg:left-[20%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
-            style={{ x: marqueeX, y: -240, rotate: -15, scale: 1.35 }}
+            className="absolute -top-64 bottom-0 lg:left-[18%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-25 dark:opacity-30 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
+            style={{ x: marqueeX, y: -220, rotate: -15, scale: 1.35 }}
           >
             {/* Column 1 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
-              {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
+              {[...textMarqueeColumn1, ...textMarqueeColumn1].map((cmp, i) => (
                 <div
                   key={i}
-                  className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+                  className={`p-5 rounded-3xl border-2 ${cmp.borderColor} ${cmp.bgColor} shadow-xl w-64 lg:w-72 shrink-0 flex flex-col justify-between`}
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                    <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="p-3.5">
-                    <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
-                    <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ${cmp.badgeBg}`}>
+                        {cmp.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-[#475569] dark:text-[#E6E6E6]/70">
+                        {cmp.tag}
+                      </span>
+                    </div>
+                    <h3 className="text-sm font-black text-[#002C5F] dark:text-white leading-snug mb-1.5 line-clamp-2">
+                      {cmp.title}
+                    </h3>
+                    <p className="text-[11px] font-semibold text-[#475569] dark:text-[#E6E6E6]/80 leading-relaxed line-clamp-2">
+                      {cmp.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -124,17 +177,26 @@ export default function HeroSection() {
 
             {/* Column 2 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-down w-64 lg:w-72 shrink-0 -mt-24">
-              {[...marqueeCardsColumn2, ...marqueeCardsColumn2].map((cmp, i) => (
+              {[...textMarqueeColumn2, ...textMarqueeColumn2].map((cmp, i) => (
                 <div
                   key={i}
-                  className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+                  className={`p-5 rounded-3xl border-2 ${cmp.borderColor} ${cmp.bgColor} shadow-xl w-64 lg:w-72 shrink-0 flex flex-col justify-between`}
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                    <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="p-3.5">
-                    <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
-                    <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ${cmp.badgeBg}`}>
+                        {cmp.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-[#475569] dark:text-[#E6E6E6]/70">
+                        {cmp.tag}
+                      </span>
+                    </div>
+                    <h3 className="text-sm font-black text-[#002C5F] dark:text-white leading-snug mb-1.5 line-clamp-2">
+                      {cmp.title}
+                    </h3>
+                    <p className="text-[11px] font-semibold text-[#475569] dark:text-[#E6E6E6]/80 leading-relaxed line-clamp-2">
+                      {cmp.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -142,17 +204,26 @@ export default function HeroSection() {
 
             {/* Column 3 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0 -mt-12">
-              {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
+              {[...textMarqueeColumn1, ...textMarqueeColumn1].map((cmp, i) => (
                 <div
                   key={i}
-                  className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+                  className={`p-5 rounded-3xl border-2 ${cmp.borderColor} ${cmp.bgColor} shadow-xl w-64 lg:w-72 shrink-0 flex flex-col justify-between`}
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                    <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="p-3.5">
-                    <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
-                    <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ${cmp.badgeBg}`}>
+                        {cmp.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-[#475569] dark:text-[#E6E6E6]/70">
+                        {cmp.tag}
+                      </span>
+                    </div>
+                    <h3 className="text-sm font-black text-[#002C5F] dark:text-white leading-snug mb-1.5 line-clamp-2">
+                      {cmp.title}
+                    </h3>
+                    <p className="text-[11px] font-semibold text-[#475569] dark:text-[#E6E6E6]/80 leading-relaxed line-clamp-2">
+                      {cmp.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -174,7 +245,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.4 }}
                 className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#38B2AC] uppercase inline-block"
               >
-                BIRO KEMAHASISWAAN &amp; AIK
+                PORTAL RESMI BIRO KEMAHASISWAAN &amp; AIK
               </motion.div>
 
               {/* Main Headline - Slides LEFT (-X) */}
@@ -212,7 +283,7 @@ export default function HeroSection() {
                   href="#kemahasiswaan"
                   className="inline-flex items-center gap-2 rounded-xl bg-[#0091CF] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#007ab3] hover:scale-[1.02] transition-all"
                 >
-                  <span>Jelajahi ORMAWA</span>
+                  <span>Jelajahi Kemahasiswaan</span>
                   <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
                 </a>
                 <a
@@ -258,7 +329,7 @@ export default function HeroSection() {
           <SplitText
             tag="p"
             text="Ruang kreativitas siber yang mengintegrasikan kecerdasan buatan, sains modern, dan nilai-nilai Al-Islam Muhammadiyah."
-            className="text-sm sm:text-base text-[#F7F7F7] max-w-xl mx-auto block text-center"
+            className="text-sm sm:text-base text-[#F7F7F7] max-w-xl mx-auto block text-center font-medium"
             delay={20}
             duration={0.8}
             ease="power3.out"
