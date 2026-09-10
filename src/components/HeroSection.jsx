@@ -145,7 +145,7 @@ export default function HeroSection() {
         >
           {/* Background Sliding Text Cards Marquee (No Images, Pure Text Cards matching Kemahasiswaan data) */}
           <motion.div
-            className="absolute -top-64 bottom-0 lg:left-[18%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-25 dark:opacity-30 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
+            className="absolute -top-64 bottom-0 lg:left-[18%] lg:right-0 z-0 overflow-hidden pointer-events-none select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
             style={{ x: marqueeX, y: -220, rotate: -15, scale: 1.35 }}
           >
             {/* Column 1 */}
