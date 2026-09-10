@@ -20,6 +20,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import { kemahasiswaanData } from '../data/content';
+import ScrollReveal from './ScrollReveal';
 
 const iconMap = {
   Users,
@@ -132,14 +133,20 @@ export default function KemahasiswaanSection() {
                           </span>
                         </div>
 
-                        {/* Middle Content: Title & Rich Description */}
+                        {/* Middle Content: Title & Rich ScrollReveal Description */}
                         <div className="relative z-10 my-6 space-y-3">
                           <h4 className="text-xl font-extrabold text-[#002C5F] dark:text-white group-hover:text-[#0091CF] dark:group-hover:text-[#38B2AC] transition-colors duration-300">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-[#475569] dark:text-[#E6E6E6]/85 leading-relaxed font-medium">
+                          <ScrollReveal
+                            enableBlur={true}
+                            baseOpacity={0.25}
+                            baseRotation={2}
+                            blurStrength={5}
+                            textClassName="text-sm text-[#475569] dark:text-[#E6E6E6]/85 leading-relaxed font-medium"
+                          >
                             {item.desc}
-                          </p>
+                          </ScrollReveal>
                         </div>
 
                         {/* Bottom Footer: Interactive Action Circle */}
