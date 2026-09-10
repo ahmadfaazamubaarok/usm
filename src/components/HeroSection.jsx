@@ -151,8 +151,8 @@ export default function HeroSection() {
               y: -280,
               rotate: -15,
               scale: 1.48,
-              maskImage: 'linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,1) 98%)',
-              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,1) 98%)'
+              maskImage: 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.9) 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.9) 100%)'
             }}
           >
             {/* Column 1 */}
