@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight, Compass } from 'lucide-react';
 import ScrollExpand from './ScrollExpand';
 
@@ -74,134 +74,154 @@ const marqueeCardsColumn2 = [
 ];
 
 export default function HeroSection() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start']
+  });
+
+  // Scroll interactive transformations: scale up + progressive blur + fade opacity
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
+  const blurPx = useTransform(scrollYProgress, [0, 1], [0, 16]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.3]);
+  const filter = useTransform(blurPx, (v) => `blur(${v}px)`);
+
   return (
     <div className="relative">
       {/* Upper Hero Section with Left-Aligned Clean Studio Layout */}
-      <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white dark:bg-[#00132b] transition-colors duration-300 min-h-[80vh] flex flex-col justify-center">
-
-        {/* Background Sliding Cards Marquee */}
-        <div
-          className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4"
-          style={{ transform: 'rotate(-20deg) scale(1.4)' }}
+      <section
+        ref={containerRef}
+        id="hero"
+        className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white dark:bg-[#00132b] transition-colors duration-300 min-h-[80vh] flex flex-col justify-center"
+      >
+        <motion.div
+          style={{ scale, opacity, filter }}
+          className="w-full relative z-10 origin-center"
         >
-          {/* Column 1 */}
-          <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
-            {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
-              <div
-                key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
-              >
-                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                  <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
+          {/* Background Sliding Cards Marquee */}
+          <div
+            className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4"
+            style={{ transform: 'rotate(-20deg) scale(1.4)' }}
+          >
+            {/* Column 1 */}
+            <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
+              {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                    <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
+                  </div>
+                  <div className="p-3.5">
+                    <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
+                    <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  </div>
                 </div>
-                <div className="p-3.5">
-                  <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+              ))}
+            </div>
+
+            {/* Column 2 */}
+            <div className="flex flex-col gap-6 animate-hero-marquee-down w-64 lg:w-72 shrink-0 -mt-24">
+              {[...marqueeCardsColumn2, ...marqueeCardsColumn2].map((cmp, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                    <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
+                  </div>
+                  <div className="p-3.5">
+                    <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
+                    <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Column 3 */}
+            <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0 -mt-12">
+              {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                    <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
+                  </div>
+                  <div className="p-3.5">
+                    <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
+                    <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Column 2 */}
-          <div className="flex flex-col gap-6 animate-hero-marquee-down w-64 lg:w-72 shrink-0 -mt-24">
-            {[...marqueeCardsColumn2, ...marqueeCardsColumn2].map((cmp, i) => (
-              <div
-                key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
+          {/* Minimal Soft Ambient Glow */}
+          <div className="pointer-events-none absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[500px] rounded-full bg-[#0091CF]/10 dark:bg-[#0091CF]/15 blur-[120px] z-1" />
+
+          {/* Minimal Clean Typography Content */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="max-w-xl text-left space-y-5">
+
+              {/* Small Category Tag */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#38B2AC] uppercase"
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                  <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                </div>
-                <div className="p-3.5">
-                  <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
-                </div>
-              </div>
-            ))}
+                BIRO KEMAHASISWAAN &amp; AIK
+              </motion.div>
+
+              {/* Main Headline (Simple 2-Word Punchy Headline) */}
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] text-[#002C5F] dark:text-white"
+              >
+                Sinergi<br />
+                <span className="text-[#38B2AC]">Berkemajuan.</span>
+              </motion.h1>
+
+              {/* Subtitle Paragraph (1 Clean Sentence) */}
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="text-base sm:text-lg text-[#475569] dark:text-[#E6E6E6]/90 font-medium leading-relaxed max-w-lg"
+              >
+                Wadah inovasi mahasiswa dan penguatan nilai Al-Islam Kemuhammadiyahan Universitas Siber Muhammadiyah.
+              </motion.p>
+
+              {/* Solid High-Contrast CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="pt-2 flex flex-wrap items-center gap-3.5"
+              >
+                <a
+                  href="#kemahasiswaan"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#0091CF] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#007ab3] hover:scale-[1.02] transition-all"
+                >
+                  <span>Jelajahi ORMAWA</span>
+                  <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                </a>
+                <a
+                  href="#aik"
+                  className="inline-flex items-center gap-2 rounded-xl border border-[#002C5F]/20 dark:border-white/20 bg-white/80 dark:bg-white/5 px-6 py-3.5 text-sm font-bold text-[#002C5F] dark:text-white hover:bg-white dark:hover:bg-white/10 transition-all shadow-sm"
+                >
+                  <Compass className="w-4 h-4 text-[#38B2AC]" />
+                  <span>Program AIK</span>
+                </a>
+              </motion.div>
+
+            </div>
           </div>
-
-          {/* Column 3 */}
-          <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0 -mt-12">
-            {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
-              <div
-                key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
-              >
-                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
-                  <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
-                </div>
-                <div className="p-3.5">
-                  <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
-                  <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Minimal Soft Ambient Glow */}
-        <div className="pointer-events-none absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[500px] rounded-full bg-[#0091CF]/10 dark:bg-[#0091CF]/15 blur-[120px] z-1" />
-
-        {/* Minimal Clean Typography Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-xl text-left space-y-5">
-
-            {/* Small Category Tag */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#38B2AC] uppercase"
-            >
-              BIRO KEMAHASISWAAN &amp; AIK
-            </motion.div>
-
-            {/* Main Headline (Simple 2-Word Punchy Headline) */}
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] text-[#002C5F] dark:text-white"
-            >
-              Sinergi<br />
-              <span className="text-[#38B2AC]">Berkemajuan.</span>
-            </motion.h1>
-
-            {/* Subtitle Paragraph (1 Clean Sentence) */}
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="text-base sm:text-lg text-[#475569] dark:text-[#E6E6E6]/90 font-medium leading-relaxed max-w-lg"
-            >
-              Wadah inovasi mahasiswa dan penguatan nilai Al-Islam Kemuhammadiyahan Universitas Siber Muhammadiyah.
-            </motion.p>
-
-            {/* Solid High-Contrast CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="pt-2 flex flex-wrap items-center gap-3.5"
-            >
-              <a
-                href="#kemahasiswaan"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#002C5F] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#007ab3] hover:scale-[1.02] transition-all"
-              >
-                <span>Jelajahi ORMAWA</span>
-                <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-              </a>
-              <a
-                href="#aik"
-                className="inline-flex items-center gap-2 rounded-xl border border-[#002C5F]/20 dark:border-white/20 bg-white/80 dark:bg-white/5 px-6 py-3.5 text-sm font-bold text-[#002C5F] dark:text-white hover:bg-white dark:hover:bg-white/10 transition-all shadow-sm"
-              >
-                <Compass className="w-4 h-4 text-[#38B2AC]" />
-                <span>Program AIK</span>
-              </a>
-            </motion.div>
-
-          </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Full-width Sticky ScrollExpand Showcase */}
