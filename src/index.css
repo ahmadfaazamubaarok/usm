@@ -4,7 +4,7 @@
   :root {
     --brand-navy: #002C5F;
     --brand-navy-dark: #001a3a;
-    --brand-navy-card: #003775;
+    --brand-navy-card: #002550;
     --brand-blue: #0091CF;
     --brand-gold: #D4A017;
     --brand-white: #FFFFFF;
@@ -27,14 +27,14 @@
 
 /* SiberMu Glassmorphism & Card Utilities */
 .glass-panel {
-  background: rgba(0, 44, 95, 0.75);
+  background: rgba(0, 44, 95, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 145, 207, 0.25);
 }
 
 .glass-card {
-  background: rgba(0, 30, 68, 0.85);
+  background: rgba(0, 37, 80, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(230, 230, 230, 0.12);
@@ -68,6 +68,35 @@
   background: linear-gradient(135deg, #FFFFFF 0%, #D4A017 60%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* -------------------------------------------------------------------------
+   Infinite Marquee Card Animations (Inspired by DonasiTrust)
+------------------------------------------------------------------------- */
+@keyframes hero-marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes hero-marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-hero-marquee-up {
+  animation: hero-marquee-up 34s linear infinite;
+}
+
+.animate-hero-marquee-down {
+  animation: hero-marquee-down 40s linear infinite;
 }
 
 /* Custom Scrollbar */

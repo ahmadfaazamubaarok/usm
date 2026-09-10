@@ -7,7 +7,9 @@ import {
   Clock,
   Globe,
   ArrowUp,
-  Award
+  Award,
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
 import { siteConfig, footerData } from '../data/content';
 
@@ -18,7 +20,42 @@ export default function Footer() {
 
   return (
     <footer id="kontak" className="bg-[#001a3a] border-t border-[#0091CF]/25 relative text-[#E6E6E6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Bottom CTA Banner (DonasiTrust Pattern) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -translate-y-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#002C5F] via-[#002147] to-[#001a3a] p-8 sm:p-12 border border-[#0091CF]/40 shadow-2xl shadow-[#0091CF]/20">
+          {/* Ambient Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#0091CF]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D4A017]/15 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[1.5fr_1fr]">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/40 text-xs font-bold text-[#D4A017] mb-3">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Mari Berkontribusi & Berprestasi</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                Ingin Bergabung dengan ORMAWA atau Kegiatan AIK SiberMu?
+              </h2>
+              <p className="mt-3 text-sm text-[#E6E6E6]/90 leading-relaxed max-w-xl">
+                Kembangkan potensi kepemimpinan, riset teknologi siber, dan penguatan nilai-nilai Keislaman bersama Biro Kemahasiswaan & AIK Universitas Siber Muhammadiyah.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <a
+                href={siteConfig.universityUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0091CF] px-8 py-3.5 text-sm font-bold text-white hover:bg-[#007ab3] transition-all hover:scale-105 shadow-xl shadow-[#0091CF]/30 text-center"
+              >
+                <span>Portal Resmi SiberMu</span>
+                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Brand Info */}
           <div className="space-y-4 lg:col-span-1">
@@ -127,7 +164,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Mandatory License Credits (Ketentuan Lomba) */}
+          {/* Col 4: Mandatory License Credits */}
           <div className="space-y-4">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
               <Award className="w-4 h-4 text-[#D4A017]" />
