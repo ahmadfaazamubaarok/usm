@@ -18,10 +18,10 @@ const SplitText = ({
   rootMargin = '-100px',
   textAlign = 'center',
   tag = 'p',
+  toggleActions = 'play reverse play reverse',
   onLetterAnimationComplete
 }) => {
   const ref = useRef(null);
-  const animationCompletedRef = useRef(false);
   const onCompleteRef = useRef(onLetterAnimationComplete);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -43,7 +43,6 @@ const SplitText = ({
   useGSAP(
     () => {
       if (!ref.current || !text || !fontsLoaded) return;
-      if (animationCompletedRef.current) return;
       const el = ref.current;
       const targets = el.querySelectorAll(splitType.includes('chars') ? '.split-char' : '.split-word');
       if (!targets.length) return;
@@ -71,12 +70,9 @@ const SplitText = ({
           scrollTrigger: {
             trigger: el,
             start,
-            once: true,
-            fastScrollEnd: true,
-            anticipatePin: 0.4
+            toggleActions
           },
           onComplete: () => {
-            animationCompletedRef.current = true;
             onCompleteRef.current?.();
           },
           willChange: 'transform, opacity',
@@ -98,6 +94,7 @@ const SplitText = ({
         duration,
         ease,
         splitType,
+        toggleActions,
         JSON.stringify(from),
         JSON.stringify(to),
         threshold,
