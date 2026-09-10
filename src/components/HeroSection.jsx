@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Compass } from 'lucide-react';
-import { siteConfig, statsData } from '../data/content';
+import { ArrowUpRight, Compass } from 'lucide-react';
+import { statsData } from '../data/content';
 import ScrollExpand from './ScrollExpand';
 
 const marqueeCardsColumn1 = [
@@ -77,20 +77,20 @@ const marqueeCardsColumn2 = [
 export default function HeroSection() {
   return (
     <div className="relative">
-      {/* Upper Hero Section with Dynamic Dark/Light Theme Support */}
-      <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-[#F7F7F7] to-white dark:from-[#001a3a] dark:via-[#002550] dark:to-[#001a3a] transition-colors duration-300">
+      {/* Upper Hero Section with Left-Aligned DonasiTrust Layout & Right Marquee */}
+      <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-white via-[#F7F7F7] to-white dark:from-[#001a3a] dark:via-[#002550] dark:to-[#001a3a] transition-colors duration-300 min-h-[85vh] flex flex-col justify-center">
         
-        {/* Animated Background Sliding Cards Marquee */}
+        {/* Animated Background Sliding Cards Marquee (Shifted Right for Left Text Legibility - DonasiTrust Pattern) */}
         <div
-          className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-20 dark:opacity-25 select-none flex justify-center lg:justify-end gap-6 p-4"
-          style={{ transform: 'rotate(-20deg) scale(1.35)' }}
+          className="absolute inset-0 lg:left-[22%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-20 dark:opacity-25 select-none flex justify-center lg:justify-end gap-6 p-4"
+          style={{ transform: 'rotate(-22deg) scale(1.45)' }}
         >
           {/* Column 1: Scrolls Up */}
-          <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 shrink-0">
+          <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
             {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-lg w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
@@ -103,7 +103,7 @@ export default function HeroSection() {
                     </span>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-3.5">
                   <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
                   <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
                 </div>
@@ -112,11 +112,11 @@ export default function HeroSection() {
           </div>
 
           {/* Column 2: Scrolls Down */}
-          <div className="flex flex-col gap-6 animate-hero-marquee-down w-64 shrink-0 -mt-24">
+          <div className="flex flex-col gap-6 animate-hero-marquee-down w-64 lg:w-72 shrink-0 -mt-24">
             {[...marqueeCardsColumn2, ...marqueeCardsColumn2].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-lg w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
@@ -129,7 +129,7 @@ export default function HeroSection() {
                     </span>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-3.5">
                   <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
                   <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
                 </div>
@@ -138,11 +138,11 @@ export default function HeroSection() {
           </div>
 
           {/* Column 3: Scrolls Up */}
-          <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 shrink-0 -mt-12">
+          <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0 -mt-12">
             {[...marqueeCardsColumn1, ...marqueeCardsColumn1].map((cmp, i) => (
               <div
                 key={i}
-                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-lg w-64 shrink-0"
+                className="flex flex-col overflow-hidden rounded-2xl border border-[#E6E6E6] dark:border-white/20 bg-white dark:bg-[#002C5F] shadow-xl w-64 lg:w-72 shrink-0"
               >
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
                   <img src={cmp.img} alt={cmp.title} className="h-full w-full object-cover" />
@@ -155,7 +155,7 @@ export default function HeroSection() {
                     </span>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-3.5">
                   <h3 className="text-xs font-bold text-[#002C5F] dark:text-white line-clamp-1">{cmp.title}</h3>
                   <p className="mt-1 text-[11px] text-[#475569] dark:text-[#E6E6E6]/80 line-clamp-1">{cmp.desc}</p>
                 </div>
@@ -165,75 +165,75 @@ export default function HeroSection() {
         </div>
 
         {/* Ambient Radial Backlight Glow */}
-        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] rounded-full bg-gradient-to-tr from-[#0091CF]/15 via-[#D4A017]/10 to-transparent blur-[140px] z-1" />
+        <div className="pointer-events-none absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] rounded-full bg-gradient-to-tr from-[#0091CF]/20 via-[#D4A017]/15 to-transparent blur-[140px] z-1" />
 
-        {/* Foreground Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto space-y-6">
-            {/* Badge */}
+        {/* Foreground Content - Left-Aligned DonasiTrust Layout */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="max-w-2xl text-left space-y-6">
+            
+            {/* Small Subtitle Category Tag (DonasiTrust Style) */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F7F7F7] dark:bg-[#002C5F]/90 border border-[#0091CF]/40 text-xs font-bold text-[#002C5F] dark:text-[#0091CF] shadow-sm backdrop-blur-md"
+              className="text-xs font-extrabold tracking-widest text-[#0091CF] dark:text-[#D4A017] uppercase"
             >
-              <Sparkles className="w-4 h-4 text-[#D4A017] animate-pulse" />
-              <span>{siteConfig.heroBadge}</span>
+              KEMAHASISWAAN &amp; AIK SIBERMU
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Title (DonasiTrust Two-Line Bold Style) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#002C5F] dark:text-white leading-[1.15]"
+              className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-[#002C5F] dark:text-white"
             >
-              Sinergi Kemahasiswaan &{' '}
-              <span className="text-gradient-gold">AIK Berkemajuan</span>
+              Sinergi Kemahasiswaan.<br />
+              <span className="text-gradient-gold">AIK Berkemajuan.</span>
             </motion.h1>
 
-            {/* Tagline & Description */}
+            {/* Subtitle Paragraph */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base sm:text-lg text-[#334155] dark:text-[#E6E6E6] font-medium leading-relaxed"
+              className="text-base sm:text-lg text-[#334155] dark:text-[#E6E6E6] font-medium leading-relaxed max-w-xl"
             >
-              {siteConfig.description}
+              Kembangkan potensi sains siber, kepemimpinan ormawa, dan penguatan nilai-nilai Keislaman di Universitas Siber Muhammadiyah.
             </motion.p>
 
-            {/* Action Buttons */}
+            {/* CTA Buttons Row (DonasiTrust Style) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-4 pt-2"
+              className="pt-2 flex flex-wrap items-center gap-3.5"
             >
               <a
                 href="#kemahasiswaan"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-[#0091CF] text-white hover:bg-[#007ab3] transition-all shadow-lg shadow-[#0091CF]/25 hover:shadow-[#0091CF]/40 hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0091CF] px-6 py-3.5 text-sm font-black text-white shadow-lg shadow-[#0091CF]/25 hover:bg-[#007ab3] hover:scale-[1.02] transition-all"
               >
-                <span>{siteConfig.ctaPrimary}</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Jelajahi ORMAWA</span>
+                <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
               </a>
               <a
                 href="#aik"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold bg-white dark:bg-[#002C5F]/90 text-[#002C5F] dark:text-[#F7F7F7] border border-[#002C5F]/30 dark:border-[#D4A017]/40 hover:border-[#D4A017] hover:bg-[#F7F7F7] dark:hover:bg-[#002550] transition-all shadow-sm hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#002C5F]/20 dark:border-white/20 bg-white/80 dark:bg-white/5 px-6 py-3.5 text-sm font-bold text-[#002C5F] dark:text-white hover:bg-white dark:hover:bg-white/10 transition-all shadow-sm"
               >
                 <Compass className="w-4 h-4 text-[#D4A017]" />
-                <span>{siteConfig.ctaSecondary}</span>
+                <span>Lihat Program AIK</span>
               </a>
             </motion.div>
 
-            {/* Trust Checklist */}
+            {/* Trust Checklist Row (DonasiTrust Style) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-2 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-bold text-[#002C5F] dark:text-[#E6E6E6]"
+              className="pt-2 flex flex-wrap items-center gap-6 text-xs sm:text-sm font-bold text-[#002C5F] dark:text-[#E6E6E6]"
             >
               <div className="flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/20 text-[#0091CF] font-black text-xs">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-[#0091CF]/20 text-[#0091CF] dark:text-[#0091CF] font-black text-xs">
                   ✓
                 </span>
                 <span>Pembelajaran 100% Siber</span>
@@ -251,21 +251,22 @@ export default function HeroSection() {
                 <span>Pembinaan Berkelanjutan</span>
               </div>
             </motion.div>
+
           </div>
 
-          {/* Stats Grid */}
+          {/* Stats Grid Bar */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-14"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mt-14"
           >
             {statsData.map((stat, idx) => (
               <div
                 key={idx}
-                className="glass-card p-4 sm:p-6 rounded-2xl text-center border border-[#E6E6E6] dark:border-white/10 bg-white dark:bg-[#002550] shadow-sm hover:shadow-md transition-shadow"
+                className="glass-card p-4 sm:p-5 rounded-2xl text-left border border-[#E6E6E6] dark:border-white/10 bg-white/90 dark:bg-[#002550]/90 shadow-sm hover:shadow-md transition-all"
               >
-                <div className="text-2xl sm:text-3xl font-extrabold text-[#0091CF] mb-1">
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#0091CF] dark:text-[#38bdf8] mb-1">
                   {stat.value}
                 </div>
                 <div className="text-xs sm:text-sm text-[#475569] dark:text-[#E6E6E6]/80 font-semibold">{stat.label}</div>
