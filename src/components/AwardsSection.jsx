@@ -9,11 +9,11 @@ const awardsList = [
     category: 'Cyber Security Challenge 2025',
     organizer: 'Kementerian Pendidikan & Kebudayaan',
     year: '2025',
-    color: 'from-[#D4A017] via-[#f59e0b] to-[#b45309]',
-    bgColor: 'bg-[#FFFBEB] dark:bg-[#271E07]',
-    borderColor: 'border-[#D4A017]',
-    textColor: 'text-[#92400E] dark:text-[#FDE68A]',
-    badgeBg: 'bg-[#D4A017] text-black',
+    color: 'from-[#38B2AC] via-[#319795] to-[#2C7A7B]',
+    bgColor: 'bg-[#E6FFFA] dark:bg-[#083835]',
+    borderColor: 'border-[#38B2AC]',
+    textColor: 'text-[#234E52] dark:text-[#B2F5EA]',
+    badgeBg: 'bg-[#38B2AC] text-white',
     rotation: -6,
     offsetY: 0,
     tag: 'Nasional'
@@ -77,7 +77,7 @@ export default function AwardsSection() {
       </div>
 
       {/* Ambient Glows */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#D4A017]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#38B2AC]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#0091CF]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -85,13 +85,13 @@ export default function AwardsSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7F7F7] dark:bg-[#002C5F] border border-[#D4A017]/40 text-xs font-extrabold text-[#D4A017] mb-4 shadow-sm">
-              <Trophy className="w-3.5 h-3.5 text-[#D4A017]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F7F7F7] dark:bg-[#002C5F] border border-[#38B2AC]/40 text-xs font-extrabold text-[#38B2AC] mb-4 shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-[#38B2AC]" />
               <span>Apresiasi &amp; Rekognisi Publik</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-[#002C5F] dark:text-white tracking-tight leading-tight">
               Penghargaan &amp; <br className="hidden sm:inline" />
-              <span className="text-gradient-gold">Capaian Mahasiswa</span>
+              <span className="text-[#38B2AC]">Capaian Mahasiswa</span>
             </h2>
           </div>
 
@@ -124,7 +124,7 @@ export default function AwardsSection() {
                 </div>
 
                 <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#002C5F] border border-black/10 dark:border-white/20 flex items-center justify-center mb-4 shadow-sm group-hover:rotate-12 transition-transform">
-                  <Medal className="w-5 h-5 text-[#D4A017]" />
+                  <Medal className="w-5 h-5 text-[#38B2AC]" />
                 </div>
 
                 <h3 className="text-lg font-black text-[#002C5F] dark:text-white leading-snug mb-2 group-hover:text-[#0091CF] transition-colors">
@@ -155,7 +155,7 @@ export default function AwardsSection() {
             
             {/* Left Col: Featured Highlight */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/40 text-xs font-bold text-[#D4A017]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#38B2AC]/20 border border-[#38B2AC]/40 text-xs font-bold text-[#38B2AC]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>KARYA UNGGULAN TERBAIK 2025</span>
               </div>
@@ -183,7 +183,7 @@ export default function AwardsSection() {
             <div className="lg:col-span-5 grid grid-cols-3 gap-3 sm:gap-4">
               
               <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 text-center flex flex-col items-center justify-center">
-                <span className="text-2xl sm:text-3xl font-black text-[#D4A017] mb-1">100+</span>
+                <span className="text-2xl sm:text-3xl font-black text-[#38B2AC] mb-1">100+</span>
                 <span className="text-[10px] sm:text-xs font-bold text-[#E6E6E6] uppercase">Penghargaan</span>
               </div>
 

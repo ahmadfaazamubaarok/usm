@@ -41,7 +41,7 @@ html.theme-light .bubble-menu .bubble {
 
 html.theme-dark .bubble-menu .bubble {
   background: #001a3a;
-  border: 1px solid rgba(212, 160, 23, 0.4);
+  border: 1px solid rgba(56, 178, 172, 0.4);
   color: #FFFFFF;
 }
 
@@ -209,7 +209,7 @@ html.theme-light .bubble-menu-items .pill-link {
 html.theme-dark .bubble-menu-items .pill-link {
   background: #002C5F;
   color: #FFFFFF;
-  border: 2px solid #D4A017;
+  border: 2px solid #38B2AC;
 }
 
 @media (min-width: 900px) {

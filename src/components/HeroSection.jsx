@@ -19,7 +19,7 @@ const marqueeCardsColumn1 = [
     tag: 'Riset & Teknologi',
     desc: 'Komunitas keamanan siber & etikal hacking.',
     img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80',
-    color: '#D4A017'
+    color: '#38B2AC'
   },
   {
     title: 'Juara 1 Gemastik Siber 2025',
@@ -35,7 +35,7 @@ const marqueeCardsColumn1 = [
     tag: 'Intelektual',
     desc: 'Diskusi etika AI & keislaman modern.',
     img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80',
-    color: '#D4A017'
+    color: '#38B2AC'
   }
 ];
 
@@ -46,7 +46,7 @@ const marqueeCardsColumn2 = [
     tag: 'Kemuhammadiyahan',
     desc: 'Penguatan karakter & kepemimpinan.',
     img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80',
-    color: '#D4A017'
+    color: '#38B2AC'
   },
   {
     title: 'SiberMu Media & Esports',
@@ -70,7 +70,7 @@ const marqueeCardsColumn2 = [
     tag: 'Juara 2',
     desc: 'Solusi AI mitigasi bencana.',
     img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80',
-    color: '#D4A017'
+    color: '#38B2AC'
   }
 ];
 
@@ -79,7 +79,7 @@ export default function HeroSection() {
     <div className="relative">
       {/* Upper Hero Section with Left-Aligned Clean Studio Layout */}
       <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white dark:bg-[#00132b] transition-colors duration-300 min-h-[80vh] flex flex-col justify-center">
-        
+
         {/* Background Sliding Cards Marquee */}
         <div
           className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4"
@@ -146,13 +146,13 @@ export default function HeroSection() {
         {/* Minimal Clean Typography Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-xl text-left space-y-5">
-            
+
             {/* Small Category Tag */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#D4A017] uppercase"
+              className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#38B2AC] uppercase"
             >
               BIRO KEMAHASISWAAN &amp; AIK
             </motion.div>
@@ -165,7 +165,7 @@ export default function HeroSection() {
               className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] text-[#002C5F] dark:text-white"
             >
               Sinergi<br />
-              <span className="text-[#D4A017]">Berkemajuan.</span>
+              <span className="text-[#38B2AC]">Berkemajuan.</span>
             </motion.h1>
 
             {/* Subtitle Paragraph (1 Clean Sentence) */}
@@ -196,7 +196,7 @@ export default function HeroSection() {
                 href="#aik"
                 className="inline-flex items-center gap-2 rounded-xl border border-[#002C5F]/20 dark:border-white/20 bg-white/80 dark:bg-white/5 px-6 py-3.5 text-sm font-bold text-[#002C5F] dark:text-white hover:bg-white dark:hover:bg-white/10 transition-all shadow-sm"
               >
-                <Compass className="w-4 h-4 text-[#D4A017]" />
+                <Compass className="w-4 h-4 text-[#38B2AC]" />
                 <span>Program AIK</span>
               </a>
             </motion.div>
@@ -230,7 +230,7 @@ export default function HeroSection() {
         <ScrollExpand
           src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80"
           alt="Kampus SiberMu Digital Studio"
-          title="Kampus Siber Berkemajuan"
+          title="Universitas Siber Muhammadiyah"
           scrollHint="Gulir ke bawah untuk eksplorasi"
           useWindowScroll
           scrollDistance={1.0}

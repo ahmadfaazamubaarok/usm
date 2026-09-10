@@ -25,11 +25,11 @@ export default function Footer() {
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#002C5F] via-[#002147] to-[#001a3a] p-8 sm:p-12 border border-[#0091CF]/40 shadow-2xl shadow-[#0091CF]/20">
           {/* Ambient Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#0091CF]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D4A017]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#38B2AC]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[1.5fr_1fr]">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/40 text-xs font-bold text-[#D4A017] mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#38B2AC]/20 border border-[#38B2AC]/40 text-xs font-bold text-[#38B2AC] mb-3">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Mari Berkontribusi & Berprestasi</span>
               </div>
@@ -122,7 +122,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#aik" className="hover:text-[#D4A017] transition-colors">
+                <a href="#aik" className="hover:text-[#38B2AC] transition-colors">
                   Al-Islam & Kemuhammadiyahan
                 </a>
               </li>
@@ -167,7 +167,7 @@ export default function Footer() {
           {/* Col 4: Mandatory License Credits */}
           <div className="space-y-4">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <Award className="w-4 h-4 text-[#D4A017]" />
+              <Award className="w-4 h-4 text-[#38B2AC]" />
               <span>Kredit & Lisensi</span>
             </h4>
             <div className="space-y-2 text-xs">

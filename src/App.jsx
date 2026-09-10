@@ -28,14 +28,14 @@ const bubbleMenuItems = [
     href: '#aik',
     ariaLabel: 'AIK',
     rotation: 6,
-    hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#38B2AC', textColor: '#ffffff' }
   },
   {
     label: 'Prestasi',
     href: '#prestasi',
     ariaLabel: 'Prestasi Mahasiswa',
     rotation: -6,
-    hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#38B2AC', textColor: '#ffffff' }
   },
   {
     label: 'Galeri',
@@ -59,19 +59,21 @@ export default function App() {
       {/* Floating Interactive BubbleMenu from React Bits */}
       <BubbleMenu
         logo={
-          <span style={{ fontWeight: 800, letterSpacing: '0.05em', color: '#D4A017' }}>
-            SiberMu
-          </span>
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-[#0091CF] flex items-center justify-center font-extrabold text-white text-xs shadow-md">
+              SM
+            </div>
+            <div className="flex flex-col text-left leading-none">
+              <span className="font-black text-sm tracking-tight text-white">SiberMu</span>
+              <span className="text-[10px] font-semibold text-[#38B2AC] tracking-wider uppercase">Kemahasiswaan &amp; AIK</span>
+            </div>
+          </div>
         }
         items={bubbleMenuItems}
-        menuAriaLabel="Navigasi Gelembung SiberMu"
-        useFixedPosition={true}
-        animationEase="back.out(1.5)"
-        animationDuration={0.5}
-        staggerDelay={0.1}
+        menuAriaLabel="Navigasi Utama SiberMu"
       />
 
-      {/* Page Content Sections */}
+      {/* Main Page Sections */}
       <main>
         <HeroSection />
         <KemahasiswaanSection />

@@ -7,7 +7,7 @@
     --brand-navy: #002C5F;
     --brand-navy-dark: #001a3a;
     --brand-blue: #0091CF;
-    --brand-gold: #D4A017;
+    --brand-telur-asin: #38B2AC;
     --brand-white: #FFFFFF;
     --brand-light-bg: #F7F7F7;
     --brand-gray: #E6E6E6;
@@ -85,20 +85,20 @@ html.theme-dark .glass-card {
 }
 
 .glass-card-gold:hover {
-  border-color: #D4A017;
-  box-shadow: 0 12px 30px -8px rgba(212, 160, 23, 0.25);
+  border-color: #38B2AC;
+  box-shadow: 0 12px 30px -8px rgba(56, 178, 172, 0.25);
 }
 
 /* Islamic Geometric Pattern */
 html:not(.dark) .bg-islamic-pattern {
-  background-image: radial-gradient(rgba(0, 145, 207, 0.15) 1px, transparent 1px), radial-gradient(rgba(212, 160, 23, 0.12) 1px, #FFFFFF 1px);
+  background-image: radial-gradient(rgba(0, 145, 207, 0.15) 1px, transparent 1px), radial-gradient(rgba(56, 178, 172, 0.15) 1px, #FFFFFF 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }
 
 html.dark .bg-islamic-pattern,
 html.theme-dark .bg-islamic-pattern {
-  background-image: radial-gradient(rgba(0, 145, 207, 0.2) 1px, transparent 1px), radial-gradient(rgba(212, 160, 23, 0.15) 1px, rgba(0, 26, 58, 0.98) 1px);
+  background-image: radial-gradient(rgba(0, 145, 207, 0.2) 1px, transparent 1px), radial-gradient(rgba(56, 178, 172, 0.2) 1px, rgba(0, 26, 58, 0.98) 1px);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
 }
@@ -118,14 +118,14 @@ html.theme-dark .text-gradient-blue {
 }
 
 html:not(.dark) .text-gradient-gold {
-  background: linear-gradient(135deg, #002C5F 0%, #D4A017 100%);
+  background: linear-gradient(135deg, #002C5F 0%, #38B2AC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 html.dark .text-gradient-gold,
 html.theme-dark .text-gradient-gold {
-  background: linear-gradient(135deg, #FFFFFF 0%, #D4A017 60%, #f59e0b 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #38B2AC 60%, #4FD1C5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -84,7 +84,7 @@ export default function ThemeToggle({ className = '', style = {} }) {
       className={`bubble theme-toggle-bubble cursor-pointer pointer-events-auto flex items-center justify-center rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-md ${className}`}
     >
       {isDark ? (
-        <Sun className="h-5 w-5 text-[#D4A017] animate-pulse stroke-[2.2]" />
+        <Sun className="h-5 w-5 text-[#38B2AC] animate-pulse stroke-[2.2]" />
       ) : (
         <Moon className="h-5 w-5 text-[#0091CF] stroke-[2.2]" />
       )}

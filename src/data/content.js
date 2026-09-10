@@ -1,5 +1,5 @@
 // Data Konten Landing Page Biro Kemahasiswaan & AIK Universitas Siber Muhammadiyah (SiberMu)
-// Palette Resmi SiberMu: #002C5F (Navy), #0091CF (Blue), #FFFFFF (White), #F7F7F7 (Off-White), #D4A017 (Gold), #E6E6E6 (Gray)
+// Palette Resmi SiberMu: #002C5F (Navy), #0091CF (Blue), #FFFFFF (White), #F7F7F7 (Off-White), #38B2AC (Hijau Telur Asin / Teal), #E6E6E6 (Gray)
 
 export const siteConfig = {
   title: "Biro Kemahasiswaan & AIK",
@@ -48,7 +48,7 @@ export const kemahasiswaanData = {
           type: "Ikatan Mahasiswa Muhammadiyah",
           desc: "Organisasi otonom kader persyarikatan dalam bingkai ketaqwaan & intelektualitas.",
           icon: "BookOpen",
-          color: "from-[#D4A017]/30 to-[#002C5F]/40"
+          color: "from-[#38B2AC]/30 to-[#002C5F]/40"
         }
       ]
     },
@@ -70,14 +70,14 @@ export const kemahasiswaanData = {
           type: "UKM Seni & Olahraga Digital",
           desc: "Pengembangan bakat penyiaran konten kreatif dan atlet e-sports profesional.",
           icon: "Gamepad2",
-          color: "from-[#D4A017]/30 to-[#0091CF]/30"
+          color: "from-[#38B2AC]/30 to-[#0091CF]/30"
         },
         {
           name: "SiberMu Innovation Hub",
           type: "UKM Kewirausahaan",
           desc: "Inkubator startup digital mahasiswa berbasis teknologi berkemajuan.",
           icon: "Rocket",
-          color: "from-[#D4A017]/40 to-[#002C5F]/30"
+          color: "from-[#38B2AC]/40 to-[#002C5F]/30"
         }
       ]
     },
@@ -92,7 +92,7 @@ export const kemahasiswaanData = {
           type: "Tingkat Nasional",
           desc: "Tim SiberTekno meraih penghargaan utama kategori Cyber Security Challenge.",
           icon: "Award",
-          color: "from-[#D4A017]/40 to-[#0091CF]/20"
+          color: "from-[#38B2AC]/40 to-[#0091CF]/20"
         },
         {
           name: "Juara 2 National AI Hackathon 2025",
@@ -121,7 +121,7 @@ export const kemahasiswaanData = {
           type: "Layanan Kesejahteraan",
           desc: "Akses informasi & pendaftaran Beasiswa Sang Surya, KIP-K, dan Mitra Industri.",
           icon: "GraduationCap",
-          color: "from-[#D4A017]/30 to-[#0091CF]/30"
+          color: "from-[#38B2AC]/30 to-[#0091CF]/30"
         },
         {
           name: "e-Counseling & Mental Health",
