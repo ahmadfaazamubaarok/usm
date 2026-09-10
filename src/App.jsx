@@ -2,7 +2,6 @@ import React from 'react';
 import BubbleMenu from './components/BubbleMenu';
 import HeroSection from './components/HeroSection';
 import KemahasiswaanSection from './components/KemahasiswaanSection';
-import TransitionSection from './components/TransitionSection';
 import AikSection from './components/AikSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
@@ -74,7 +73,6 @@ export default function App() {
       <main>
         <HeroSection />
         <KemahasiswaanSection />
-        <TransitionSection />
         <AikSection />
         <GallerySection />
       </main>
