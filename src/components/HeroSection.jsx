@@ -83,12 +83,12 @@ export default function HeroSection() {
   // Lightweight mobile-optimized opacity fade (No heavy CSS blur)
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.15]);
 
-  // Silky smooth horizontal X-axis sliding transforms (Hardware-accelerated translateX)
+  // ALL text components slide LEFT (-X), ALL card components slide RIGHT (+X)
   const tagX = useTransform(scrollYProgress, [0, 1], [0, -320]);
-  const headlineX = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const headlineX = useTransform(scrollYProgress, [0, 1], [0, -380]);
   const subtitleX = useTransform(scrollYProgress, [0, 1], [0, -340]);
-  const ctaX = useTransform(scrollYProgress, [0, 1], [0, 320]);
-  const marqueeX = useTransform(scrollYProgress, [0, 1], [0, 380]);
+  const ctaX = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const marqueeX = useTransform(scrollYProgress, [0, 1], [0, 500]);
 
   return (
     <div ref={containerRef} className="relative bg-white dark:bg-[#00132b] transition-colors duration-300">
@@ -98,10 +98,10 @@ export default function HeroSection() {
           style={{ opacity }}
           className="w-full relative z-10 origin-center"
         >
-          {/* Background Sliding Cards Marquee with Lightweight Horizontal X-Dispersal */}
+          {/* Background Sliding Cards Marquee - Lifted Higher Up + Slides RIGHT (+X) */}
           <motion.div
-            className="absolute -top-40 bottom-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
-            style={{ x: marqueeX, y: -100, rotate: -15, scale: 1.35 }}
+            className="absolute -top-72 bottom-0 lg:left-[20%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
+            style={{ x: marqueeX, y: -240, rotate: -15, scale: 1.35 }}
           >
             {/* Column 1 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
@@ -161,11 +161,11 @@ export default function HeroSection() {
           {/* Minimal Soft Ambient Glow */}
           <div className="pointer-events-none absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[500px] rounded-full bg-[#0091CF]/10 dark:bg-[#0091CF]/15 blur-[120px] z-1" />
 
-          {/* Minimal Clean Typography Content with Horizontal X-Sliding Effects */}
+          {/* Minimal Clean Typography Content - ALL Text Slides LEFT (-X) */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="max-w-xl text-left space-y-5">
 
-              {/* Small Category Tag - Slides left (-X) */}
+              {/* Small Category Tag - Slides LEFT (-X) */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function HeroSection() {
                 BIRO KEMAHASISWAAN &amp; AIK
               </motion.div>
 
-              {/* Main Headline - Slides right (+X) */}
+              {/* Main Headline - Slides LEFT (-X) */}
               <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -188,7 +188,7 @@ export default function HeroSection() {
                 <span className="text-[#38B2AC]">Berkemajuan.</span>
               </motion.h1>
 
-              {/* Subtitle Paragraph - Slides left (-X) */}
+              {/* Subtitle Paragraph - Slides LEFT (-X) */}
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -199,7 +199,7 @@ export default function HeroSection() {
                 Wadah inovasi mahasiswa dan penguatan nilai Al-Islam Kemuhammadiyahan Universitas Siber Muhammadiyah.
               </motion.p>
 
-              {/* Solid High-Contrast CTA Buttons - Slides right (+X) */}
+              {/* Solid High-Contrast CTA Buttons - Slides LEFT (-X) */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
