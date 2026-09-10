@@ -80,11 +80,32 @@ export default function HeroSection() {
     offset: ['start start', 'end start']
   });
 
-  // Scroll interactive transformations: scale up + progressive blur + fade opacity
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
-  const blurPx = useTransform(scrollYProgress, [0, 1], [0, 16]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.3]);
+  // Global section scale, opacity, and progressive blur
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const blurPx = useTransform(scrollYProgress, [0, 1], [0, 18]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.2]);
   const filter = useTransform(blurPx, (v) => `blur(${v}px)`);
+
+  // Individual component chaotic dispersal / scatter transforms on scroll
+  const tagX = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const tagY = useTransform(scrollYProgress, [0, 1], [0, -90]);
+  const tagRotate = useTransform(scrollYProgress, [0, 1], [0, -22]);
+
+  const headlineX = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const headlineRotate = useTransform(scrollYProgress, [0, 1], [0, 18]);
+
+  const subtitleX = useTransform(scrollYProgress, [0, 1], [0, -140]);
+  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const subtitleRotate = useTransform(scrollYProgress, [0, 1], [0, -16]);
+
+  const ctaX = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const ctaY = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const ctaRotate = useTransform(scrollYProgress, [0, 1], [0, 28]);
+
+  const marqueeRotate = useTransform(scrollYProgress, [0, 1], [-20, -45]);
+  const marqueeScale = useTransform(scrollYProgress, [0, 1], [1.4, 2.0]);
+  const marqueeX = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   return (
     <div className="relative">
@@ -98,10 +119,10 @@ export default function HeroSection() {
           style={{ scale, opacity, filter }}
           className="w-full relative z-10 origin-center"
         >
-          {/* Background Sliding Cards Marquee */}
-          <div
-            className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4"
-            style={{ transform: 'rotate(-20deg) scale(1.4)' }}
+          {/* Background Sliding Cards Marquee with Dynamic Scroll Dispersal */}
+          <motion.div
+            className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
+            style={{ rotate: marqueeRotate, scale: marqueeScale, x: marqueeX }}
           >
             {/* Column 1 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
@@ -156,52 +177,56 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Minimal Soft Ambient Glow */}
           <div className="pointer-events-none absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[500px] rounded-full bg-[#0091CF]/10 dark:bg-[#0091CF]/15 blur-[120px] z-1" />
 
-          {/* Minimal Clean Typography Content */}
+          {/* Minimal Clean Typography Content with Scatter Dispersal Effects */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="max-w-xl text-left space-y-5">
 
-              {/* Small Category Tag */}
+              {/* Small Category Tag - Flies top-left */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                style={{ x: tagX, y: tagY, rotate: tagRotate }}
                 transition={{ duration: 0.4 }}
-                className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#38B2AC] uppercase"
+                className="text-xs font-bold tracking-widest text-[#0091CF] dark:text-[#38B2AC] uppercase inline-block"
               >
                 BIRO KEMAHASISWAAN &amp; AIK
               </motion.div>
 
-              {/* Main Headline (Simple 2-Word Punchy Headline) */}
+              {/* Main Headline - Flies right & rotates */}
               <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
+                style={{ x: headlineX, y: headlineY, rotate: headlineRotate }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] text-[#002C5F] dark:text-white"
+                className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] text-[#002C5F] dark:text-white origin-left"
               >
                 Sinergi<br />
                 <span className="text-[#38B2AC]">Berkemajuan.</span>
               </motion.h1>
 
-              {/* Subtitle Paragraph (1 Clean Sentence) */}
+              {/* Subtitle Paragraph - Flies down-left */}
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
+                style={{ x: subtitleX, y: subtitleY, rotate: subtitleRotate }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-base sm:text-lg text-[#475569] dark:text-[#E6E6E6]/90 font-medium leading-relaxed max-w-lg"
+                className="text-base sm:text-lg text-[#475569] dark:text-[#E6E6E6]/90 font-medium leading-relaxed max-w-lg origin-left"
               >
                 Wadah inovasi mahasiswa dan penguatan nilai Al-Islam Kemuhammadiyahan Universitas Siber Muhammadiyah.
               </motion.p>
 
-              {/* Solid High-Contrast CTA Buttons */}
+              {/* Solid High-Contrast CTA Buttons - Flies down-right */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
+                style={{ x: ctaX, y: ctaY, rotate: ctaRotate }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="pt-2 flex flex-wrap items-center gap-3.5"
+                className="pt-2 flex flex-wrap items-center gap-3.5 origin-left"
               >
                 <a
                   href="#kemahasiswaan"
