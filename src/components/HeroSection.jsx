@@ -100,8 +100,8 @@ export default function HeroSection() {
         >
           {/* Background Sliding Cards Marquee with Lightweight Horizontal X-Dispersal */}
           <motion.div
-            className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
-            style={{ x: marqueeX, rotate: -20, scale: 1.4 }}
+            className="absolute -top-40 bottom-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
+            style={{ x: marqueeX, y: -100, rotate: -15, scale: 1.35 }}
           >
             {/* Column 1 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
