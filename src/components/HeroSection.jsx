@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight, Compass } from 'lucide-react';
 import ScrollExpand from './ScrollExpand';
+import SplitText from './SplitText';
 
 const marqueeCardsColumn1 = [
   {
@@ -241,12 +242,32 @@ export default function HeroSection() {
           startHeight={60}
           startRadius={32}
         >
-          <h3 className="text-2xl sm:text-4xl font-bold text-white mb-2">
-            Inovasi Tanpa Batas, Akhlak Utama
-          </h3>
-          <p className="text-sm sm:text-base text-[#F7F7F7] max-w-xl mx-auto">
-            Ruang kreativitas siber yang mengintegrasikan kecerdasan buatan, sains modern, dan nilai-nilai Al-Islam Muhammadiyah.
-          </p>
+          <SplitText
+            tag="h3"
+            text="Inovasi Tanpa Batas, Akhlak Utama"
+            className="text-2xl sm:text-4xl font-bold text-white mb-2 text-center"
+            delay={40}
+            duration={0.8}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            textAlign="center"
+          />
+          <SplitText
+            tag="p"
+            text="Ruang kreativitas siber yang mengintegrasikan kecerdasan buatan, sains modern, dan nilai-nilai Al-Islam Muhammadiyah."
+            className="text-sm sm:text-base text-[#F7F7F7] max-w-xl mx-auto block text-center"
+            delay={20}
+            duration={0.8}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 20 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            textAlign="center"
+          />
         </ScrollExpand>
       </section>
     </div>
