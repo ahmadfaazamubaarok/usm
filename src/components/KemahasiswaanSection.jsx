@@ -102,43 +102,54 @@ export default function KemahasiswaanSection() {
                   </div>
                 </div>
 
-                {/* Cards Grid with Backdrop Blur Glassmorphism & No Shadows */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Cards Grid - Taller Cards with Spotlight Hover Beam & Rotating Icon Badge */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {category.items.map((item, itemIdx) => {
                     const ItemIcon = iconMap[item.icon] || ShieldCheck;
 
                     return (
                       <motion.div
                         key={itemIdx}
-                        whileHover={{ y: -6, scale: 1.01 }}
-                        className="group relative flex flex-col justify-between p-6 rounded-2xl bg-white/70 dark:bg-[#002550]/50 backdrop-blur-md border border-slate-200/80 dark:border-white/10 hover:border-[#0091CF]/60 dark:hover:border-[#38B2AC]/60 transition-all duration-300 overflow-hidden"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: itemIdx * 0.08 }}
+                        className="group relative flex flex-col justify-between p-8 rounded-3xl bg-white/60 dark:bg-[#002550]/40 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 hover:border-[#0091CF] dark:hover:border-[#38B2AC] min-h-[340px] transition-all duration-500 overflow-hidden"
                       >
-                        {/* Background subtle gradient glow on hover */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                        {/* Glowing Spotlight Ambient Beam on Hover */}
+                        <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-[#0091CF]/40 via-[#38B2AC]/40 to-[#002C5F]/30 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 pointer-events-none" />
 
-                        <div className="relative z-10 space-y-4">
-                          <div className="flex items-center justify-between">
-                            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-[#0091CF] dark:text-[#38B2AC] bg-[#0091CF]/10 dark:bg-[#38B2AC]/15 backdrop-blur-sm">
-                              {item.type}
-                            </span>
-                            <div className="p-2 rounded-xl bg-slate-100/80 dark:bg-white/10 backdrop-blur-sm text-[#002C5F] dark:text-white group-hover:bg-[#0091CF] group-hover:text-white transition-colors duration-300">
-                              <ItemIcon className="w-5 h-5" />
-                            </div>
-                          </div>
+                        {/* Inner Card Glassmorphism Surface */}
+                        <div className="absolute inset-[1px] rounded-[23px] bg-white/85 dark:bg-[#001e42]/90 backdrop-blur-2xl transition-colors duration-300 pointer-events-none" />
 
-                          <div>
-                            <h4 className="text-lg font-bold text-[#002C5F] dark:text-white group-hover:text-[#0091CF] dark:group-hover:text-[#38B2AC] transition-colors">
-                              {item.name}
-                            </h4>
-                            <p className="mt-2 text-xs sm:text-sm text-[#475569] dark:text-[#E6E6E6]/80 leading-relaxed">
-                              {item.desc}
-                            </p>
+                        {/* Top Header: Rotating Icon Badge + Pill Tag */}
+                        <div className="relative z-10 flex items-start justify-between">
+                          <div className="p-3.5 rounded-2xl bg-gradient-to-br from-[#0091CF]/15 to-[#38B2AC]/20 dark:from-[#0091CF]/30 dark:to-[#38B2AC]/30 text-[#0091CF] dark:text-[#38B2AC] border border-[#0091CF]/20 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-[#0091CF] group-hover:text-white transition-all duration-500 shadow-sm">
+                            <ItemIcon className="w-6 h-6" />
                           </div>
+                          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wide text-[#0091CF] dark:text-[#38B2AC] bg-[#0091CF]/10 dark:bg-[#38B2AC]/15 border border-[#0091CF]/20 backdrop-blur-md">
+                            {item.type}
+                          </span>
                         </div>
 
-                        <div className="relative z-10 pt-4 mt-4 border-t border-slate-200/50 dark:border-white/5 flex items-center justify-between text-xs font-bold text-[#0091CF] dark:text-[#38B2AC] group-hover:translate-x-1 transition-transform">
-                          <span>Lihat Detail</span>
-                          <ArrowUpRight className="w-4 h-4" />
+                        {/* Middle Content: Title & Rich Description */}
+                        <div className="relative z-10 my-6 space-y-3">
+                          <h4 className="text-xl font-extrabold text-[#002C5F] dark:text-white group-hover:text-[#0091CF] dark:group-hover:text-[#38B2AC] transition-colors duration-300">
+                            {item.name}
+                          </h4>
+                          <p className="text-sm text-[#475569] dark:text-[#E6E6E6]/85 leading-relaxed font-medium">
+                            {item.desc}
+                          </p>
+                        </div>
+
+                        {/* Bottom Footer: Interactive Action Circle */}
+                        <div className="relative z-10 pt-4 border-t border-slate-200/60 dark:border-white/10 flex items-center justify-between">
+                          <span className="text-xs font-extrabold text-[#002C5F] dark:text-white group-hover:text-[#0091CF] dark:group-hover:text-[#38B2AC] transition-colors">
+                            Eksplorasi Program
+                          </span>
+                          <div className="w-9 h-9 rounded-full bg-[#0091CF]/10 dark:bg-white/10 flex items-center justify-center text-[#0091CF] dark:text-[#38B2AC] group-hover:bg-[#0091CF] group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                            <ArrowUpRight className="w-4.5 h-4.5 stroke-[2.5]" />
+                          </div>
                         </div>
                       </motion.div>
                     );
