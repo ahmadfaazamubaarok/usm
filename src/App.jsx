@@ -60,7 +60,9 @@ export default function App() {
       <BubbleMenu
         logo={
           <div className="flex items-center gap-2.5">
-            <img src="/logo-muhammadiyah.png" alt="Logo SiberMu" className="w-7 h-7 object-contain drop-shadow" />
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 shadow-sm shrink-0">
+              <img src="/logo-muhammadiyah.png" alt="Logo SiberMu" className="w-full h-full object-contain" />
+            </div>
             <span className="font-black text-base tracking-tight text-white">SiberMu</span>
           </div>
         }

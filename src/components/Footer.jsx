@@ -59,7 +59,9 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <img src="/logo-muhammadiyah.png" alt="Logo SiberMu" className="w-9 h-9 object-contain drop-shadow" />
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1.5 shadow-md shrink-0">
+                <img src="/logo-muhammadiyah.png" alt="Logo SiberMu" className="w-full h-full object-contain" />
+              </div>
               <span className="text-lg font-bold text-white tracking-wide">
                 {siteConfig.title}
               </span>
