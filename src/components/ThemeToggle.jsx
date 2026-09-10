@@ -11,11 +11,11 @@ export default function ThemeToggle({ className = '', style = {} }) {
     
     setIsDark(initialDark);
     if (initialDark) {
-      document.documentElement.classList.add('theme-dark');
+      document.documentElement.classList.add('theme-dark', 'dark');
       document.documentElement.classList.remove('theme-light');
     } else {
       document.documentElement.classList.add('theme-light');
-      document.documentElement.classList.remove('theme-dark');
+      document.documentElement.classList.remove('theme-dark', 'dark');
     }
   }, []);
 
@@ -25,12 +25,12 @@ export default function ThemeToggle({ className = '', style = {} }) {
       setIsDark(nextDark);
 
       if (nextDark) {
-        document.documentElement.classList.add('theme-dark');
+        document.documentElement.classList.add('theme-dark', 'dark');
         document.documentElement.classList.remove('theme-light');
         localStorage.setItem('sibermu_theme', 'dark');
       } else {
         document.documentElement.classList.add('theme-light');
-        document.documentElement.classList.remove('theme-dark');
+        document.documentElement.classList.remove('theme-dark', 'dark');
         localStorage.setItem('sibermu_theme', 'light');
       }
     };
