@@ -20,7 +20,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { kemahasiswaanData } from '../data/content';
-import SplitText from './SplitText';
+import ScrollFloat from './ScrollFloat';
 
 const iconMap = {
   Users,
@@ -51,21 +51,19 @@ export default function KemahasiswaanSection() {
   return (
     <section id="kemahasiswaan" className="py-24 relative bg-[#F7F7F7] dark:bg-[#001e42] border-t border-b border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Simplified Header with Large "Kemahasiswaan" SplitText */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <SplitText
-            tag="h2"
-            text="Kemahasiswaan"
-            className="text-5xl sm:text-7xl lg:text-8xl font-black text-[#002C5F] dark:text-white tracking-tight block text-center"
-            delay={50}
-            duration={0.8}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            textAlign="center"
-          />
+        {/* Simplified Header with React Bits ScrollFloat */}
+        <div className="text-center max-w-4xl mx-auto mb-16 flex justify-center">
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="top bottom-=10%"
+            scrollEnd="center center"
+            stagger={0.03}
+            containerClassName="text-[#002C5F] dark:text-white"
+            textClassName="font-black tracking-tight"
+          >
+            Kemahasiswaan
+          </ScrollFloat>
         </div>
 
         {/* Tab Navigation Controls */}
