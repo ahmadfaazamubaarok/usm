@@ -78,8 +78,8 @@ export default function HeroSection() {
   return (
     <div className="relative">
       {/* Upper Hero Section with Left-Aligned Clean Studio Layout */}
-      <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white dark:bg-[#001a3a] transition-colors duration-300 min-h-[80vh] flex flex-col justify-center">
-
+      <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white dark:bg-[#00132b] transition-colors duration-300 min-h-[80vh] flex flex-col justify-center">
+        
         {/* Background Sliding Cards Marquee */}
         <div
           className="absolute inset-0 lg:left-[24%] lg:right-0 z-0 overflow-hidden pointer-events-none opacity-15 dark:opacity-20 select-none flex justify-center lg:justify-end gap-6 p-4"
@@ -146,7 +146,7 @@ export default function HeroSection() {
         {/* Minimal Clean Typography Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-xl text-left space-y-5">
-
+            
             {/* Small Category Tag */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -157,15 +157,15 @@ export default function HeroSection() {
               BIRO KEMAHASISWAAN &amp; AIK
             </motion.div>
 
-            {/* Main Headline (Clean Solid High-Contrast Typography, No Artificial Gradients) */}
+            {/* Main Headline (Simple 2-Word Punchy Headline) */}
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] text-[#002C5F] dark:text-white"
+              className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] text-[#002C5F] dark:text-white"
             >
-              Kemahasiswaan<br />
-              <span className="text-[#D4A017]">SIBERMU</span>
+              Sinergi<br />
+              <span className="text-[#D4A017]">Berkemajuan.</span>
             </motion.h1>
 
             {/* Subtitle Paragraph (1 Clean Sentence) */}
