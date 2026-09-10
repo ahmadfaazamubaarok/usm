@@ -81,40 +81,36 @@ export default function HeroSection() {
   });
 
   // Global section scale, opacity, and progressive blur
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const blurPx = useTransform(scrollYProgress, [0, 1], [0, 18]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.2]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
+  const blurPx = useTransform(scrollYProgress, [0, 1], [0, 20]);
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0.1]);
   const filter = useTransform(blurPx, (v) => `blur(${v}px)`);
 
   // Individual component chaotic dispersal / scatter transforms on scroll
-  const tagX = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const tagY = useTransform(scrollYProgress, [0, 1], [0, -90]);
-  const tagRotate = useTransform(scrollYProgress, [0, 1], [0, -22]);
+  const tagX = useTransform(scrollYProgress, [0, 1], [0, -180]);
+  const tagY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const tagRotate = useTransform(scrollYProgress, [0, 1], [0, -28]);
 
-  const headlineX = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const headlineRotate = useTransform(scrollYProgress, [0, 1], [0, 18]);
+  const headlineX = useTransform(scrollYProgress, [0, 1], [0, 240]);
+  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const headlineRotate = useTransform(scrollYProgress, [0, 1], [0, 24]);
 
-  const subtitleX = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const subtitleRotate = useTransform(scrollYProgress, [0, 1], [0, -16]);
+  const subtitleX = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const subtitleRotate = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
-  const ctaX = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const ctaY = useTransform(scrollYProgress, [0, 1], [0, 140]);
-  const ctaRotate = useTransform(scrollYProgress, [0, 1], [0, 28]);
+  const ctaX = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const ctaY = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const ctaRotate = useTransform(scrollYProgress, [0, 1], [0, 32]);
 
-  const marqueeRotate = useTransform(scrollYProgress, [0, 1], [-20, -45]);
-  const marqueeScale = useTransform(scrollYProgress, [0, 1], [1.4, 2.0]);
-  const marqueeX = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const marqueeRotate = useTransform(scrollYProgress, [0, 1], [-20, -50]);
+  const marqueeScale = useTransform(scrollYProgress, [0, 1], [1.4, 2.2]);
+  const marqueeX = useTransform(scrollYProgress, [0, 1], [0, 280]);
 
   return (
-    <div className="relative">
-      {/* Upper Hero Section with Left-Aligned Clean Studio Layout */}
-      <section
-        ref={containerRef}
-        id="hero"
-        className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white dark:bg-[#00132b] transition-colors duration-300 min-h-[80vh] flex flex-col justify-center"
-      >
+    <div ref={containerRef} className="relative bg-white dark:bg-[#00132b] transition-colors duration-300">
+      {/* Sticky Pinned Hero Section (Stays in Y position while scatter animation runs) */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center z-0">
         <motion.div
           style={{ scale, opacity, filter }}
           className="w-full relative z-10 origin-center"
@@ -247,10 +243,10 @@ export default function HeroSection() {
             </div>
           </div>
         </motion.div>
-      </section>
+      </div>
 
-      {/* Full-width Sticky ScrollExpand Showcase */}
-      <section className="relative w-full my-8">
+      {/* Full-width Sticky ScrollExpand Showcase - Floating transparently over pinned Hero */}
+      <section className="relative z-10 w-full bg-transparent">
         <ScrollExpand
           src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80"
           alt="Kampus SiberMu Digital Studio"
