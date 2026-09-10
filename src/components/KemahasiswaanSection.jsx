@@ -21,7 +21,6 @@ import {
 } from 'lucide-react';
 import { kemahasiswaanData } from '../data/content';
 
-// Map string icon names to Lucide Icon components safely
 const iconMap = {
   Users,
   Cpu,
@@ -49,17 +48,17 @@ export default function KemahasiswaanSection() {
     kemahasiswaanData.categories[0];
 
   return (
-    <section id="kemahasiswaan" className="py-24 relative bg-[#070e1c] border-t border-b border-white/5">
+    <section id="kemahasiswaan" className="py-24 relative bg-[#001e42] border-t border-b border-[#0091CF]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-400 mb-4">
-            <span>Biro Kemahasiswaan SiberMu</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0091CF]/15 border border-[#0091CF]/30 text-xs font-semibold text-[#0091CF] mb-4">
+            <span className="text-[#F7F7F7]">Biro Kemahasiswaan SiberMu</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
             {kemahasiswaanData.title}
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-[#E6E6E6]/90 text-base sm:text-lg">
             {kemahasiswaanData.subtitle}
           </p>
         </div>
@@ -76,11 +75,11 @@ export default function KemahasiswaanSection() {
                 onClick={() => setActiveTab(cat.id)}
                 className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-lg shadow-emerald-500/20 scale-105'
-                    : 'glass-card text-slate-300 hover:text-white hover:border-white/20'
+                    ? 'bg-gradient-to-r from-[#0091CF] to-[#002C5F] text-white shadow-lg shadow-[#0091CF]/30 scale-105 border border-[#0091CF]/50'
+                    : 'glass-card text-[#E6E6E6] hover:text-white hover:border-[#0091CF]/30'
                 }`}
               >
-                <IconComp className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-emerald-400'}`} />
+                <IconComp className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#0091CF]'}`} />
                 <span>{cat.title}</span>
               </button>
             );
@@ -88,7 +87,7 @@ export default function KemahasiswaanSection() {
         </div>
 
         {/* Tab Description */}
-        <div className="text-center max-w-2xl mx-auto mb-10 text-slate-300 text-sm sm:text-base font-medium">
+        <div className="text-center max-w-2xl mx-auto mb-10 text-[#F7F7F7] text-sm sm:text-base font-medium">
           {activeCategory.description}
         </div>
 
@@ -108,32 +107,32 @@ export default function KemahasiswaanSection() {
               return (
                 <div
                   key={idx}
-                  className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between border border-white/10"
+                  className="glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between border border-[#E6E6E6]/15"
                 >
-                  {/* Subtle Card Background Glow */}
+                  {/* Card Background Gradient Glow */}
                   <div
-                    className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${item.color} rounded-bl-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none`}
+                    className={`absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl ${item.color} rounded-bl-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none`}
                   />
 
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-slate-900/90 border border-white/10 flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 group-hover:border-emerald-500/40 transition-transform">
+                    <div className="w-12 h-12 rounded-2xl bg-[#002C5F] border border-[#0091CF]/30 flex items-center justify-center mb-6 text-[#0091CF] group-hover:scale-110 group-hover:border-[#0091CF] transition-transform">
                       <ItemIcon className="w-6 h-6" />
                     </div>
 
-                    <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2">
+                    <div className="text-xs font-bold text-[#0091CF] uppercase tracking-wider mb-2">
                       {item.type}
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#0091CF] transition-colors">
                       {item.name}
                     </h3>
 
-                    <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    <p className="text-[#E6E6E6]/80 text-sm leading-relaxed mb-6">
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-slate-300 group-hover:text-emerald-400 transition-colors">
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-[#E6E6E6] group-hover:text-[#0091CF] transition-colors">
                     <span>Lihat Informasi Detail</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

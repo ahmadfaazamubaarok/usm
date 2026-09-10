@@ -1,5 +1,5 @@
 // Data Konten Landing Page Biro Kemahasiswaan & AIK Universitas Siber Muhammadiyah (SiberMu)
-// Bebas diedit tanpa harus mengubah struktur komponen UI.
+// Palette Resmi SiberMu: #002C5F (Navy), #0091CF (Blue), #FFFFFF (White), #F7F7F7 (Off-White), #D4A017 (Gold), #E6E6E6 (Gray)
 
 export const siteConfig = {
   title: "Biro Kemahasiswaan & AIK",
@@ -34,21 +34,21 @@ export const kemahasiswaanData = {
           type: "Badan Eksekutif",
           desc: "Organisasi tertinggi mahasiswa penggerak inovasi & kolaborasi sains siber.",
           icon: "ShieldCheck",
-          color: "from-blue-500/20 to-cyan-500/20"
+          color: "from-[#0091CF]/30 to-[#002C5F]/40"
         },
         {
           name: "DPM SiberMu",
           type: "Dewan Perwakilan",
           desc: "Lembaga legislatif dan pengawasan aspirasi seluruh mahasiswa.",
           icon: "FileText",
-          color: "from-indigo-500/20 to-purple-500/20"
+          color: "from-[#002C5F]/50 to-[#0091CF]/20"
         },
         {
           name: "IMM SiberMu",
           type: "Ikatan Mahasiswa Muhammadiyah",
           desc: "Organisasi otonom kader persyarikatan dalam bingkai ketaqwaan & intelektualitas.",
           icon: "BookOpen",
-          color: "from-emerald-500/20 to-teal-500/20"
+          color: "from-[#D4A017]/30 to-[#002C5F]/40"
         }
       ]
     },
@@ -63,21 +63,21 @@ export const kemahasiswaanData = {
           type: "UKM Penalaran & Teknologi",
           desc: "Komunitas riset keamanan siber, kecerdasan buatan, dan etikal hacking.",
           icon: "Terminal",
-          color: "from-cyan-500/20 to-blue-500/20"
+          color: "from-[#0091CF]/30 to-[#002C5F]/40"
         },
         {
           name: "SiberMu Media & Esports",
           type: "UKM Seni & Olahraga Digital",
           desc: "Pengembangan bakat penyiaran konten kreatif dan atlet e-sports profesional.",
           icon: "Gamepad2",
-          color: "from-purple-500/20 to-pink-500/20"
+          color: "from-[#D4A017]/30 to-[#0091CF]/30"
         },
         {
           name: "SiberMu Innovation Hub",
           type: "UKM Kewirausahaan",
           desc: "Inkubator startup digital mahasiswa berbasis teknologi berkemajuan.",
           icon: "Rocket",
-          color: "from-amber-500/20 to-orange-500/20"
+          color: "from-[#D4A017]/40 to-[#002C5F]/30"
         }
       ]
     },
@@ -92,21 +92,21 @@ export const kemahasiswaanData = {
           type: "Tingkat Nasional",
           desc: "Tim SiberTekno meraih penghargaan utama kategori Cyber Security Challenge.",
           icon: "Award",
-          color: "from-yellow-500/20 to-amber-500/20"
+          color: "from-[#D4A017]/40 to-[#0091CF]/20"
         },
         {
           name: "Juara 2 National AI Hackathon 2025",
           type: "Tingkat Nasional",
           desc: "Inovasi solusi AI untuk mitigasi bencana banjir berbasis IoT.",
           icon: "Medal",
-          color: "from-slate-400/20 to-zinc-500/20"
+          color: "from-[#0091CF]/30 to-[#E6E6E6]/10"
         },
         {
           name: "Best Presenter InMuTech International",
           type: "Tingkat Internasional",
           desc: "Presentasi riset edutech inklusif bagi penyandang disabilitas.",
           icon: "Globe",
-          color: "from-sky-500/20 to-blue-500/20"
+          color: "from-[#0091CF]/40 to-[#002C5F]/40"
         }
       ]
     },
@@ -121,21 +121,21 @@ export const kemahasiswaanData = {
           type: "Layanan Kesejahteraan",
           desc: "Akses informasi & pendaftaran Beasiswa Sang Surya, KIP-K, dan Mitra Industri.",
           icon: "GraduationCap",
-          color: "from-emerald-500/20 to-green-500/20"
+          color: "from-[#D4A017]/30 to-[#0091CF]/30"
         },
         {
           name: "e-Counseling & Mental Health",
           type: "Layanan Konseling",
           desc: "Layanan konsultasi psikologi online bersama konselor profesional secara privat.",
           icon: "HeartPulse",
-          color: "from-rose-500/20 to-pink-500/20"
+          color: "from-[#0091CF]/30 to-[#002C5F]/40"
         },
         {
           name: "Career & Talent Development Center",
           type: "Layanan Pengembangan Karier",
           desc: "Pusat magang siber, sertifikasi kompetensi, dan penyaluran kerja lulusan.",
           icon: "Briefcase",
-          color: "from-blue-500/20 to-indigo-500/20"
+          color: "from-[#002C5F]/50 to-[#0091CF]/30"
         }
       ]
     }

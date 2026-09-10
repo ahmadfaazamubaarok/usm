@@ -13,48 +13,52 @@ const bubbleMenuItems = [
     href: '#hero',
     ariaLabel: 'Beranda',
     rotation: -6,
-    hoverStyles: { bgColor: '#06b6d4', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#0091CF', textColor: '#ffffff' }
   },
   {
     label: 'Kemahasiswaan',
     href: '#kemahasiswaan',
     ariaLabel: 'Kemahasiswaan',
     rotation: 6,
-    hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#002C5F', textColor: '#ffffff' }
   },
   {
     label: 'AIK',
     href: '#aik',
     ariaLabel: 'AIK',
     rotation: 6,
-    hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
   },
   {
     label: 'Galeri',
     href: '#galeri',
     ariaLabel: 'Galeri Aktivitas',
     rotation: 6,
-    hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#0091CF', textColor: '#ffffff' }
   },
   {
     label: 'Kontak',
     href: '#kontak',
     ariaLabel: 'Kontak',
     rotation: -6,
-    hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
   }
 ];
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 relative font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
-      {/* Floating Interactive BubbleMenu from React Bits */}
+    <div className="min-h-screen bg-[#001a3a] text-[#F7F7F7] relative font-sans antialiased selection:bg-[#0091CF] selection:text-white">
+      {/* Floating Interactive BubbleMenu from React Bits with SiberMu Colors */}
       <BubbleMenu
-        logo={<span style={{ fontWeight: 800, letterSpacing: '0.05em', color: '#10b981' }}>SiberMu</span>}
+        logo={
+          <span style={{ fontWeight: 800, letterSpacing: '0.05em', color: '#D4A017' }}>
+            SiberMu
+          </span>
+        }
         items={bubbleMenuItems}
-        menuAriaLabel="Navigasi Gelembung"
-        menuBg="#0a172c"
-        menuContentColor="#ffffff"
+        menuAriaLabel="Navigasi Gelembung SiberMu"
+        menuBg="#002C5F"
+        menuContentColor="#FFFFFF"
         useFixedPosition={true}
         animationEase="back.out(1.5)"
         animationDuration={0.5}

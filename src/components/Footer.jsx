@@ -17,20 +17,20 @@ export default function Footer() {
   };
 
   return (
-    <footer id="kontak" className="bg-[#030712] border-t border-white/10 relative text-slate-400">
+    <footer id="kontak" className="bg-[#001a3a] border-t border-[#0091CF]/25 relative text-[#E6E6E6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Brand Info */}
           <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                <ShieldCheck className="w-6 h-6 text-slate-950 stroke-[2.5]" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0091CF] to-[#002C5F] flex items-center justify-center shadow-lg shadow-[#0091CF]/30 border border-[#0091CF]/40">
+                <ShieldCheck className="w-6 h-6 text-white stroke-[2.5]" />
               </div>
               <span className="text-lg font-bold text-white tracking-wide">
                 {siteConfig.title}
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#E6E6E6]/80 leading-relaxed">
               {siteConfig.university} — Mengembangkan insan siber yang berintegritas, inovatif, dan berakhlak mulia.
             </p>
             <div className="pt-2 flex items-center gap-3">
@@ -38,7 +38,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900 border border-white/10 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors"
+                className="p-2.5 rounded-xl bg-[#002C5F] border border-[#0091CF]/30 hover:border-[#0091CF] hover:text-[#0091CF] transition-colors text-white"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -49,7 +49,7 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900 border border-white/10 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors"
+                className="p-2.5 rounded-xl bg-[#002C5F] border border-[#0091CF]/30 hover:border-[#0091CF] hover:text-[#0091CF] transition-colors text-white"
                 aria-label="YouTube"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ export default function Footer() {
                 href={siteConfig.universityUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900 border border-white/10 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors"
+                className="p-2.5 rounded-xl bg-[#002C5F] border border-[#0091CF]/30 hover:border-[#0091CF] hover:text-[#0091CF] transition-colors text-white"
                 aria-label="Official Website"
               >
                 <Globe className="w-4 h-4" />
@@ -75,27 +75,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <a href="#hero" className="hover:text-emerald-400 transition-colors">
+                <a href="#hero" className="hover:text-[#0091CF] transition-colors">
                   Beranda
                 </a>
               </li>
               <li>
-                <a href="#kemahasiswaan" className="hover:text-emerald-400 transition-colors">
+                <a href="#kemahasiswaan" className="hover:text-[#0091CF] transition-colors">
                   Kemahasiswaan & ORMAWA
                 </a>
               </li>
               <li>
-                <a href="#aik" className="hover:text-emerald-400 transition-colors">
+                <a href="#aik" className="hover:text-[#D4A017] transition-colors">
                   Al-Islam & Kemuhammadiyahan
                 </a>
               </li>
               <li>
-                <a href="#galeri" className="hover:text-emerald-400 transition-colors">
+                <a href="#galeri" className="hover:text-[#0091CF] transition-colors">
                   Galeri Aktivitas
                 </a>
               </li>
               <li>
-                <a href={siteConfig.universityUrl} target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">
+                <a href={siteConfig.universityUrl} target="_blank" rel="noreferrer" className="text-[#0091CF] hover:underline font-semibold">
                   Portal Resmi SiberMu (sibermu.ac.id)
                 </a>
               </li>
@@ -109,19 +109,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-xs sm:text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#0091CF] shrink-0 mt-0.5" />
                 <span>{footerData.contacts.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Mail className="w-4 h-4 text-[#0091CF] shrink-0" />
                 <span>{footerData.contacts.email}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Phone className="w-4 h-4 text-[#0091CF] shrink-0" />
                 <span>{footerData.contacts.phone}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Clock className="w-4 h-4 text-[#0091CF] shrink-0" />
                 <span>{footerData.contacts.hours}</span>
               </li>
             </ul>
@@ -130,13 +130,13 @@ export default function Footer() {
           {/* Col 4: Mandatory License Credits (Ketentuan Lomba) */}
           <div className="space-y-4">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <Award className="w-4 h-4 text-emerald-400" />
+              <Award className="w-4 h-4 text-[#D4A017]" />
               <span>Kredit & Lisensi</span>
             </h4>
             <div className="space-y-2 text-xs">
               {footerData.credits.map((cr, i) => (
-                <div key={i} className="p-2 rounded-lg bg-slate-900/60 border border-white/5">
-                  <span className="font-semibold text-slate-200">{cr.name}</span>: {cr.desc}
+                <div key={i} className="p-2 rounded-lg bg-[#002C5F]/60 border border-[#0091CF]/20">
+                  <span className="font-semibold text-white">{cr.name}</span>: {cr.desc}
                 </div>
               ))}
             </div>
@@ -151,7 +151,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-white/10 hover:border-emerald-500/40 text-slate-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#002C5F] border border-[#0091CF]/30 hover:border-[#0091CF] text-[#E6E6E6] hover:text-white transition-colors"
           >
             <span>Kembali ke Atas</span>
             <ArrowUp className="w-3.5 h-3.5" />
