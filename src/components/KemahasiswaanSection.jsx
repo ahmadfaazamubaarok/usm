@@ -40,6 +40,40 @@ const iconMap = {
   Briefcase
 };
 
+const categoryThemes = {
+  ormawa: {
+    borderColor: 'border-[#0091CF]',
+    bgColor: 'bg-[#F0F9FF] dark:bg-[#071D2D]',
+    textColor: 'text-[#075985] dark:text-[#BAE6FD]',
+    badgeBg: 'bg-[#0091CF] text-white',
+    iconColor: 'text-[#0091CF]'
+  },
+  ukm: {
+    borderColor: 'border-[#38B2AC]',
+    bgColor: 'bg-[#E6FFFA] dark:bg-[#083835]',
+    textColor: 'text-[#234E52] dark:text-[#B2F5EA]',
+    badgeBg: 'bg-[#38B2AC] text-white',
+    iconColor: 'text-[#38B2AC]'
+  },
+  prestasi: {
+    borderColor: 'border-[#8b5cf6]',
+    bgColor: 'bg-[#F5F3FF] dark:bg-[#1E1535]',
+    textColor: 'text-[#5B21B6] dark:text-[#DDD6FE]',
+    badgeBg: 'bg-[#8b5cf6] text-white',
+    iconColor: 'text-[#8b5cf6]'
+  },
+  layanan: {
+    borderColor: 'border-[#10b981]',
+    bgColor: 'bg-[#ECFDF5] dark:bg-[#062419]',
+    textColor: 'text-[#065F46] dark:text-[#A7F3D0]',
+    badgeBg: 'bg-[#10b981] text-white',
+    iconColor: 'text-[#10b981]'
+  }
+};
+
+const rotations = [-4, 5, -3, 6, -5, 4];
+const offsetsY = [0, 16, -10, 12, -8, 14];
+
 export default function KemahasiswaanSection() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -73,10 +107,11 @@ export default function KemahasiswaanSection() {
           </motion.div>
         </div>
 
-        {/* Content Cards Showcase - Lightweight Hardware-Accelerated Performance */}
+        {/* Content Cards Showcase - Styled with Awards Certificate 3D Floating Grid */}
         <div className="space-y-16 pb-16">
           {allCategories.map((category, catIdx) => {
             const CategoryIcon = iconMap[category.icon] || Users;
+            const theme = categoryThemes[category.id] || categoryThemes.ormawa;
 
             return (
               <motion.div
@@ -85,11 +120,11 @@ export default function KemahasiswaanSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-                className="space-y-6"
+                className="space-y-8"
               >
                 {/* Sub-Header for Category */}
                 <div className="flex items-center gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0091CF]/10 dark:bg-[#0091CF]/20 text-[#0091CF] dark:text-[#38B2AC] backdrop-blur-sm">
+                  <div className={`p-2.5 rounded-xl bg-white dark:bg-[#002C5F] border border-black/10 dark:border-white/20 shadow-sm ${theme.iconColor}`}>
                     <CategoryIcon className="w-6 h-6" />
                   </div>
                   <div>
@@ -102,55 +137,54 @@ export default function KemahasiswaanSection() {
                   </div>
                 </div>
 
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* 3D Tilted Certificate Floating Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                   {category.items.map((item, itemIdx) => {
                     const ItemIcon = iconMap[item.icon] || ShieldCheck;
+                    const rot = rotations[(catIdx + itemIdx) % rotations.length];
+                    const offY = offsetsY[(catIdx + itemIdx) % offsetsY.length];
 
                     return (
                       <motion.div
                         key={itemIdx}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-30px" }}
-                        transition={{ duration: 0.4, delay: (itemIdx % 3) * 0.08 }}
-                        whileHover={{ y: -6, scale: 1.01 }}
-                        className="group relative flex flex-col justify-between p-8 rounded-3xl bg-white/60 dark:bg-[#002550]/40 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 hover:border-[#0091CF] dark:hover:border-[#38B2AC] min-h-[340px] h-full transition-all duration-300 overflow-hidden"
+                        initial={{ opacity: 0, y: 30, rotate: rot }}
+                        whileInView={{ opacity: 1, y: offY, rotate: rot }}
+                        whileHover={{ scale: 1.05, rotate: 0, zIndex: 20 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: itemIdx * 0.08 }}
+                        className={`p-6 sm:p-7 rounded-3xl border-2 ${theme.borderColor} ${theme.bgColor} shadow-xl relative group transition-all duration-300 flex flex-col justify-between cursor-pointer min-h-[300px]`}
                       >
-                        {/* Glowing Spotlight Ambient Beam on Hover */}
-                        <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-[#0091CF]/40 via-[#38B2AC]/40 to-[#002C5F]/30 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500 pointer-events-none" />
-
-                        {/* Inner Card Glassmorphism Surface */}
-                        <div className="absolute inset-[1px] rounded-[23px] bg-white/85 dark:bg-[#001e42]/90 backdrop-blur-2xl transition-colors duration-300 pointer-events-none" />
-
-                        {/* Top Header: Rotating Icon Badge + Pill Tag */}
-                        <div className="relative z-10 flex items-start justify-between">
-                          <div className="p-3.5 rounded-2xl bg-gradient-to-br from-[#0091CF]/15 to-[#38B2AC]/20 dark:from-[#0091CF]/30 dark:to-[#38B2AC]/30 text-[#0091CF] dark:text-[#38B2AC] border border-[#0091CF]/20 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-[#0091CF] group-hover:text-white transition-all duration-500 shadow-sm">
-                            <ItemIcon className="w-6 h-6" />
+                        <div>
+                          {/* Top Card Badge & Year */}
+                          <div className="flex items-center justify-between mb-5">
+                            <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${theme.badgeBg}`}>
+                              {item.type}
+                            </span>
+                            <span className="text-xs font-bold text-[#475569] dark:text-[#E6E6E6]/70">
+                              2025
+                            </span>
                           </div>
-                          <span className="inline-block px-3.5 py-1.5 rounded-full text-xs font-extrabold tracking-wide text-[#0091CF] dark:text-[#38B2AC] bg-[#0091CF]/10 dark:bg-[#38B2AC]/15 border border-[#0091CF]/20 backdrop-blur-md">
-                            {item.type}
-                          </span>
-                        </div>
 
-                        {/* Middle Content: Title & Rich Description */}
-                        <div className="relative z-10 my-6 space-y-3">
-                          <h4 className="text-xl font-extrabold text-[#002C5F] dark:text-white group-hover:text-[#0091CF] dark:group-hover:text-[#38B2AC] transition-colors duration-300">
+                          {/* Icon Container */}
+                          <div className="w-11 h-11 rounded-2xl bg-white dark:bg-[#002C5F] border border-black/10 dark:border-white/20 flex items-center justify-center mb-4 shadow-sm group-hover:rotate-12 transition-transform">
+                            <ItemIcon className={`w-5.5 h-5.5 ${theme.iconColor}`} />
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-lg sm:text-xl font-black text-[#002C5F] dark:text-white leading-snug mb-2 group-hover:text-[#0091CF] transition-colors">
                             {item.name}
-                          </h4>
-                          <p className="text-sm text-[#475569] dark:text-[#E6E6E6]/85 leading-relaxed font-medium">
+                          </h3>
+
+                          {/* Description */}
+                          <p className={`text-xs font-semibold ${theme.textColor} mb-4 leading-relaxed`}>
                             {item.desc}
                           </p>
                         </div>
 
-                        {/* Bottom Footer: Interactive Action Circle */}
-                        <div className="relative z-10 pt-4 border-t border-slate-200/60 dark:border-white/10 flex items-center justify-between">
-                          <span className="text-xs font-extrabold text-[#002C5F] dark:text-white group-hover:text-[#0091CF] dark:group-hover:text-[#38B2AC] transition-colors">
-                            Eksplorasi Program
-                          </span>
-                          <div className="w-9 h-9 rounded-full bg-[#0091CF]/10 dark:bg-white/10 flex items-center justify-center text-[#0091CF] dark:text-[#38B2AC] group-hover:bg-[#0091CF] group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
-                            <ArrowUpRight className="w-4.5 h-4.5 stroke-[2.5]" />
-                          </div>
+                        {/* Card Footer */}
+                        <div className="pt-4 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-bold text-[#475569] dark:text-[#E6E6E6]/80">
+                          <span>Eksplorasi Program</span>
+                          <ArrowUpRight className="w-4 h-4 shrink-0 text-[#0091CF] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </div>
                       </motion.div>
                     );

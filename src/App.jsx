@@ -4,7 +4,6 @@ import HeroSection from './components/HeroSection';
 import KemahasiswaanSection from './components/KemahasiswaanSection';
 import TransitionSection from './components/TransitionSection';
 import AikSection from './components/AikSection';
-import AwardsSection from './components/AwardsSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
 
@@ -77,7 +76,6 @@ export default function App() {
         <KemahasiswaanSection />
         <TransitionSection />
         <AikSection />
-        <AwardsSection />
         <GallerySection />
       </main>
 
