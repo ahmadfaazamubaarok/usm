@@ -49,10 +49,10 @@ export default function KemahasiswaanSection() {
     kemahasiswaanData.categories[0];
 
   return (
-    <section id="kemahasiswaan" className="py-24 relative bg-[#F7F7F7] dark:bg-[#001e42] border-t border-b border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
+    <section id="kemahasiswaan" className="pt-40 sm:pt-56 pb-24 relative bg-[#F7F7F7] dark:bg-[#001e42] border-t border-b border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Simplified Header with React Bits ScrollFloat */}
-        <div className="text-center w-full max-w-6xl mx-auto mb-16 flex justify-center overflow-hidden">
+        <div className="text-center w-full max-w-6xl mx-auto mt-4 sm:mt-10 mb-16 flex justify-center overflow-hidden">
           <ScrollFloat
             animationDuration={1}
             ease="back.inOut(2)"
