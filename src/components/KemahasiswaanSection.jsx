@@ -52,17 +52,17 @@ export default function KemahasiswaanSection() {
     <section id="kemahasiswaan" className="py-24 relative bg-[#F7F7F7] dark:bg-[#001e42] border-t border-b border-[#E6E6E6] dark:border-[#0091CF]/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Simplified Header with React Bits ScrollFloat */}
-        <div className="text-center max-w-4xl mx-auto mb-16 flex justify-center">
+        <div className="text-center w-full max-w-6xl mx-auto mb-16 flex justify-center overflow-hidden">
           <ScrollFloat
             animationDuration={1}
             ease="back.inOut(2)"
             scrollStart="top bottom-=10%"
             scrollEnd="center center"
             stagger={0.03}
-            containerClassName="text-[#002C5F] dark:text-white"
-            textClassName="font-black tracking-tight"
+            containerClassName="text-[#002C5F] dark:text-white max-w-full"
+            textClassName="font-black tracking-tight whitespace-nowrap"
           >
-            Kemahasiswaan
+            KEMAHASISWAAN
           </ScrollFloat>
         </div>
 
@@ -76,11 +76,10 @@ export default function KemahasiswaanSection() {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(cat.id)}
-                className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${
-                  isActive
+                className={`inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${isActive
                     ? 'bg-gradient-to-r from-[#0091CF] to-[#002C5F] text-white shadow-lg shadow-[#0091CF]/25 scale-105'
                     : 'bg-white dark:bg-[#002550] text-[#002C5F] dark:text-[#E6E6E6] border border-[#E6E6E6] dark:border-white/10 hover:border-[#0091CF] shadow-sm'
-                }`}
+                  }`}
               >
                 <IconComp className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#0091CF]'}`} />
                 <span>{cat.title}</span>
