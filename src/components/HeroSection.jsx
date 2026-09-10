@@ -143,10 +143,17 @@ export default function HeroSection() {
           style={{ opacity }}
           className="w-full relative z-10 origin-center"
         >
-          {/* Background Sliding Text Cards Marquee (No Images, Pure Text Cards matching Kemahasiswaan data) */}
+          {/* Background Sliding Text Cards Marquee (Taller Container + Gradient Filter fading out to the right) */}
           <motion.div
-            className="absolute -top-64 bottom-0 lg:left-[18%] lg:right-0 z-0 overflow-hidden pointer-events-none select-none flex justify-center lg:justify-end gap-6 p-4 origin-top-right"
-            style={{ x: marqueeX, y: -220, rotate: -15, scale: 1.35 }}
+            className="absolute -top-96 -bottom-60 lg:left-[15%] lg:right-0 z-0 overflow-hidden pointer-events-none select-none flex justify-center lg:justify-end gap-8 p-4 origin-top-right"
+            style={{
+              x: marqueeX,
+              y: -280,
+              rotate: -15,
+              scale: 1.48,
+              maskImage: 'linear-gradient(to right, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,1) 85%)',
+              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,1) 85%)'
+            }}
           >
             {/* Column 1 */}
             <div className="flex flex-col gap-6 animate-hero-marquee-up w-64 lg:w-72 shrink-0">
