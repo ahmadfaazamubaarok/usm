@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import KemahasiswaanSection from './components/KemahasiswaanSection';
 import TransitionSection from './components/TransitionSection';
 import AikSection from './components/AikSection';
+import AwardsSection from './components/AwardsSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
 
@@ -30,6 +31,13 @@ const bubbleMenuItems = [
     hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
   },
   {
+    label: 'Prestasi',
+    href: '#prestasi',
+    ariaLabel: 'Prestasi Mahasiswa',
+    rotation: -6,
+    hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
+  },
+  {
     label: 'Galeri',
     href: '#galeri',
     ariaLabel: 'Galeri Aktivitas',
@@ -41,14 +49,14 @@ const bubbleMenuItems = [
     href: '#kontak',
     ariaLabel: 'Kontak',
     rotation: -6,
-    hoverStyles: { bgColor: '#D4A017', textColor: '#ffffff' }
+    hoverStyles: { bgColor: '#002C5F', textColor: '#ffffff' }
   }
 ];
 
 export default function App() {
   return (
     <div className="min-h-screen relative font-sans antialiased selection:bg-[#0091CF] selection:text-white transition-colors duration-300">
-      {/* Floating Interactive BubbleMenu from React Bits (contains integrated ThemeToggle next to burger menu) */}
+      {/* Floating Interactive BubbleMenu from React Bits */}
       <BubbleMenu
         logo={
           <span style={{ fontWeight: 800, letterSpacing: '0.05em', color: '#D4A017' }}>
@@ -57,8 +65,6 @@ export default function App() {
         }
         items={bubbleMenuItems}
         menuAriaLabel="Navigasi Gelembung SiberMu"
-        menuBg="#002C5F"
-        menuContentColor="#FFFFFF"
         useFixedPosition={true}
         animationEase="back.out(1.5)"
         animationDuration={0.5}
@@ -71,6 +77,7 @@ export default function App() {
         <KemahasiswaanSection />
         <TransitionSection />
         <AikSection />
+        <AwardsSection />
         <GallerySection />
       </main>
 
