@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import ThemeToggle from './ThemeToggle';
 
 import './BubbleMenu.css';
 
@@ -47,8 +48,6 @@ export default function BubbleMenu({
   className,
   style,
   menuAriaLabel = 'Toggle menu',
-  menuBg = '#fff',
-  menuContentColor = '#111',
   useFixedPosition = false,
   items,
   animationEase = 'back.out(1.5)',
@@ -152,24 +151,33 @@ export default function BubbleMenu({
   return (
     <>
       <nav className={containerClassName} style={style} aria-label="Main navigation">
-        <div className="bubble logo-bubble" aria-label="Logo" style={{ background: menuBg }}>
+        {/* Left Side: Brand Logo Bubble */}
+        <div className="bubble logo-bubble shadow-xl" aria-label="Logo">
           <span className="logo-content">
             {typeof logo === 'string' ? <img src={logo} alt="Logo" className="bubble-logo" /> : logo}
           </span>
         </div>
 
-        <button
-          type="button"
-          className={`bubble toggle-bubble menu-btn ${isMenuOpen ? 'open' : ''}`}
-          onClick={handleToggle}
-          aria-label={menuAriaLabel}
-          aria-pressed={isMenuOpen}
-          style={{ background: menuBg }}
-        >
-          <span className="menu-line" style={{ background: menuContentColor }} />
-          <span className="menu-line short" style={{ background: menuContentColor }} />
-        </button>
+        {/* Right Side: Theme Toggle + Burger Menu Button */}
+        <div className="flex items-center gap-3 pointer-events-auto">
+          {/* Circular Reveal Theme Toggle embedded right next to burger menu */}
+          <ThemeToggle />
+
+          {/* Burger Menu Button */}
+          <button
+            type="button"
+            className={`bubble toggle-bubble menu-btn ${isMenuOpen ? 'open' : ''}`}
+            onClick={handleToggle}
+            aria-label={menuAriaLabel}
+            aria-pressed={isMenuOpen}
+          >
+            <span className="menu-line" />
+            <span className="menu-line short" />
+          </button>
+        </div>
       </nav>
+
+      {/* Floating Menu Links Overlay */}
       {showOverlay && (
         <div
           ref={overlayRef}
@@ -186,10 +194,8 @@ export default function BubbleMenu({
                   className="pill-link"
                   style={{
                     '--item-rot': `${item.rotation ?? 0}deg`,
-                    '--pill-bg': menuBg,
-                    '--pill-color': menuContentColor,
-                    '--hover-bg': item.hoverStyles?.bgColor || '#f3f4f6',
-                    '--hover-color': item.hoverStyles?.textColor || menuContentColor
+                    '--hover-bg': item.hoverStyles?.bgColor || '#0091CF',
+                    '--hover-color': item.hoverStyles?.textColor || '#FFFFFF'
                   }}
                   ref={el => {
                     if (el) bubblesRef.current[idx] = el;

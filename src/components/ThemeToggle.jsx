@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ className = '', style = {} }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function ThemeToggle() {
           { clipPath: `circle(${endRadius}px at ${x}px ${y}px)` }
         ],
         {
-          duration: 500,
+          duration: 450,
           easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
           pseudoElement: '::view-transition-new(root)'
         }
@@ -80,12 +80,13 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       title={isDark ? 'Ganti ke Mode Terang' : 'Ganti ke Mode Gelap'}
       aria-label={isDark ? 'Ganti ke Mode Terang' : 'Ganti ke Mode Gelap'}
-      className="fixed top-5 right-5 z-50 grid h-11 w-11 place-items-center rounded-full border border-[#0091CF]/40 bg-[#002C5F] text-[#F7F7F7] shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer backdrop-blur-md hover:border-[#D4A017]"
+      style={style}
+      className={`bubble theme-toggle-bubble cursor-pointer pointer-events-auto flex items-center justify-center rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-md ${className}`}
     >
       {isDark ? (
-        <Sun className="h-5 w-5 text-[#D4A017] animate-pulse" />
+        <Sun className="h-5 w-5 text-[#D4A017] animate-pulse stroke-[2.2]" />
       ) : (
-        <Moon className="h-5 w-5 text-[#0091CF]" />
+        <Moon className="h-5 w-5 text-[#0091CF] stroke-[2.2]" />
       )}
     </button>
   );
