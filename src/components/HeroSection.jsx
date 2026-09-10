@@ -187,7 +187,7 @@ export default function HeroSection() {
             >
               <a
                 href="#kemahasiswaan"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#0091CF] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#007ab3] hover:scale-[1.02] transition-all"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#002C5F] px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#007ab3] hover:scale-[1.02] transition-all"
               >
                 <span>Jelajahi ORMAWA</span>
                 <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />

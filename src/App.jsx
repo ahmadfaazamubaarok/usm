@@ -58,6 +58,7 @@ export default function App() {
     <div className="min-h-screen relative font-sans antialiased selection:bg-[#0091CF] selection:text-white transition-colors duration-300">
       {/* Floating Interactive BubbleMenu from React Bits */}
       <BubbleMenu
+        useFixedPosition={true}
         logo={
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center p-1 shadow-sm shrink-0">

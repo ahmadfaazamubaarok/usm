@@ -48,7 +48,7 @@ export default function BubbleMenu({
   className,
   style,
   menuAriaLabel = 'Toggle menu',
-  useFixedPosition = false,
+  useFixedPosition = true,
   items,
   animationEase = 'back.out(1.5)',
   animationDuration = 0.5,
@@ -73,6 +73,16 @@ export default function BubbleMenu({
     onMenuClick?.(nextState);
   };
 
+  const handleItemClick = () => {
+    handleToggle();
+  };
+
+  const handleOverlayClick = (e) => {
+    if (e.target === overlayRef.current) {
+      handleToggle();
+    }
+  };
+
   useEffect(() => {
     const overlay = overlayRef.current;
     const bubbles = bubblesRef.current.filter(Boolean);
@@ -81,7 +91,7 @@ export default function BubbleMenu({
     if (!overlay || !bubbles.length) return;
 
     if (isMenuOpen) {
-      gsap.set(overlay, { display: 'flex' });
+      gsap.set(overlay, { display: 'flex', opacity: 1 });
       gsap.killTweensOf([...bubbles, ...labels]);
       gsap.set(bubbles, { scale: 0, transformOrigin: '50% 50%' });
       gsap.set(labels, { y: 24, autoAlpha: 0 });
@@ -181,6 +191,7 @@ export default function BubbleMenu({
       {showOverlay && (
         <div
           ref={overlayRef}
+          onClick={handleOverlayClick}
           className={`bubble-menu-items ${useFixedPosition ? 'fixed' : 'absolute'}`}
           aria-hidden={!isMenuOpen}
         >
@@ -192,6 +203,7 @@ export default function BubbleMenu({
                   href={item.href}
                   aria-label={item.ariaLabel || item.label}
                   className="pill-link"
+                  onClick={handleItemClick}
                   style={{
                     '--item-rot': `${item.rotation ?? 0}deg`,
                     '--hover-bg': item.hoverStyles?.bgColor || '#0091CF',
