@@ -25,7 +25,7 @@ export const servicesData = [
     title: 'LMS solusi',
     desc: 'Pembelajaran Online dengan teknologi terkini.',
     icon: GraduationCap,
-    url: 'https://lms.solusi.sibermu.ac.id',
+    url: 'https://sibermu.ac.id/e-learning/',
     color: '#0091CF',
     badge: 'PJJ'
   },
@@ -49,7 +49,7 @@ export const servicesData = [
     title: 'Kal. Akademik',
     desc: 'Informasi kalender akademik setiap semester.',
     icon: Calendar,
-    url: 'https://sibermu.ac.id',
+    url: 'https://sibermu.ac.id/akademik',
     color: '#8b5cf6',
     badge: 'Jadwal'
   },
@@ -57,7 +57,7 @@ export const servicesData = [
     title: 'Akademik',
     desc: 'Pusat informasi terkait kegiatan akademik.',
     icon: BookOpenCheck,
-    url: 'https://akademik.sibermu.ac.id',
+    url: 'https://sibermu.ac.id/akademik',
     color: '#0091CF',
     badge: 'Info'
   },
@@ -65,7 +65,7 @@ export const servicesData = [
     title: 'PENMARU',
     desc: 'Pendaftaran dan penerimaan mahasiswa baru.',
     icon: UserPlus,
-    url: 'https://pmb.sibermu.ac.id',
+    url: 'https://sibermu.ac.id/admisi',
     color: '#10b981',
     badge: 'PMB'
   },
@@ -107,13 +107,13 @@ export const servicesData = [
     icon: KeyRound,
     url: 'https://sso.sibermu.ac.id',
     color: '#0091CF',
-    badge: 'Single Sign-On'
+    badge: 'SSO'
   },
   {
     title: 'E-Prints',
     desc: 'Repositori digital karya ilmiah & skripsi.',
     icon: Library,
-    url: 'https://eprints.sibermu.ac.id',
+    url: 'https://sibermu.ac.id/repository/',
     color: '#38B2AC',
     badge: 'Arsip'
   },
@@ -121,9 +121,9 @@ export const servicesData = [
     title: 'Portal Prodi',
     desc: 'Halaman web resmi setiap program studi S1.',
     icon: Globe,
-    url: 'https://prodi.sibermu.ac.id',
+    url: 'https://sibermu.ac.id/profil/upps/',
     color: '#002C5F',
-    badge: 'Program Studi'
+    badge: 'Prodi'
   },
   {
     title: 'Layanan Dosen',
