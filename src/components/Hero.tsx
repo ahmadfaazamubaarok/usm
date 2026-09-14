@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Panel: Content (55% -> 7 cols) */}
           <div className="lg:col-span-7 space-y-6">
 
@@ -34,8 +34,8 @@ export const Hero: React.FC<HeroProps> = ({
               transition={{ duration: 0.6, delay: 0.1 }}
               className="headline-800 text-4xl sm:text-5xl lg:text-6xl text-[hsl(var(--foreground))] tracking-tight leading-[1.1]"
             >
-              Membentuk Mahasiswa Siber{' '}
-              <span className="text-[hsl(var(--accent))]">Berkarakter</span> & Berprestasi.
+              Membentuk Mahasiswa{' '}
+              <span className="text-[hsl(var(--accent))]">Berkarakter</span> & <span className="text-[hsl(var(--accent))]">Berprestasi</span>.
             </motion.h1>
 
             {/* Sub-headline */}
