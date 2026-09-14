@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <style>
+      .green-fill { fill: #007a3d; }
+      .navy-fill { fill: #002b66; }
+      .white-fill { fill: #ffffff; }
+      .green-stroke { stroke: #007a3d; stroke-width: 3; fill: none; }
+      .navy-stroke { stroke: #002b66; stroke-width: 8; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Bottom Arch Curve -->
+  <path d="M 100 370 A 180 180 0 0 0 400 370" class="navy-stroke" stroke-linecap="round" />
+  
+  <!-- 3 Bottom Dots -->
+  <circle cx="230" cy="445" r="8" class="green-fill" />
+  <circle cx="250" cy="452" r="10" class="green-fill" />
+  <circle cx="270" cy="445" r="8" class="green-fill" />
+
+  <!-- Left Rice Stalk (Padi) -->
+  <g class="green-fill">
+    <!-- Rice Leaves & Grains -->
+    <path d="M 85 340 C 70 300 65 240 85 180 C 95 150 115 110 160 70 C 135 110 115 150 105 200 C 95 250 100 300 115 340 Z" />
+    <path d="M 120 120 Q 90 150 95 190 Q 120 150 135 130 Z" />
+    <path d="M 100 170 Q 75 210 85 250 Q 105 210 115 185 Z" />
+    <path d="M 88 230 Q 65 270 80 310 Q 95 270 105 245 Z" />
+    <path d="M 82 290 Q 65 330 90 360 Q 95 320 100 300 Z" />
+  </g>
+
+  <!-- Right Cotton Stalk (Kapas) -->
+  <g class="green-fill">
+    <!-- Cotton Pods & Wreath -->
+    <path d="M 415 340 C 430 300 435 240 415 180 C 405 150 385 110 340 70 C 365 110 385 150 395 200 C 405 250 400 300 385 340 Z" />
+    <!-- Cotton Blobs -->
+    <circle cx="365" cy="95" r="14" class="white-fill" stroke="#007a3d" stroke-width="4" />
+    <circle cx="395" cy="145" r="16" class="white-fill" stroke="#007a3d" stroke-width="4" />
+    <circle cx="412" cy="205" r="18" class="white-fill" stroke="#007a3d" stroke-width="4" />
+    <circle cx="415" cy="270" r="18" class="white-fill" stroke="#007a3d" stroke-width="4" />
+    <circle cx="400" cy="330" r="16" class="white-fill" stroke="#007a3d" stroke-width="4" />
+  </g>
+
+  <!-- Central 12-Pointed Muhammadiyah Sun Star -->
+  <g transform="translate(250, 235)">
+    <!-- 12 Rays -->
+    <g class="green-fill">
+      <!-- 12 Rays rotated around center -->
+      <polygon points="0,-170 18,-115 -18,-115" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(30)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(60)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(90)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(120)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(150)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(180)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(210)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(240)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(270)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(300)" />
+      <polygon points="0,-170 18,-115 -18,-115" transform="rotate(330)" />
+
+      <!-- Secondary shorter rays -->
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(15)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(45)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(75)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(105)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(135)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(165)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(195)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(225)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(255)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(285)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(315)" />
+      <polygon points="0,-145 12,-110 -12,-110" transform="rotate(345)" />
+    </g>
+
+    <!-- Outer Green Circle -->
+    <circle cx="0" cy="0" r="112" class="green-fill" />
+
+    <!-- Shahada Circular Ring (White) -->
+    <circle cx="0" cy="0" r="106" class="white-fill" />
+    <circle cx="0" cy="0" r="76" class="green-fill" />
+
+    <!-- Center Calligraphy Text: Muhammadiyah -->
+    <text x="0" y="-83" font-family="sans-serif" font-weight="bold" font-size="13" fill="#007a3d" text-anchor="middle">أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللهُ</text>
+    <text x="0" y="94" font-family="sans-serif" font-weight="bold" font-size="12" fill="#007a3d" text-anchor="middle">وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللهِ</text>
+
+    <!-- Center Circle with Arabic Muhammadiyah Text -->
+    <text x="0" y="12" font-family="serif" font-weight="bold" font-size="34" fill="#ffffff" text-anchor="middle">محمدية</text>
+  </g>
+</svg>

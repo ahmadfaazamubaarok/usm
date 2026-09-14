@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-
+          
           {/* Left Panel: Content (55% -> 7 cols) */}
           <div className="lg:col-span-7 space-y-6">
 
@@ -119,7 +119,7 @@ export const Hero: React.FC<HeroProps> = ({
                   <img
                     src={logoSibermu}
                     alt="Logo SiberMu"
-                    className="w-5 h-5 object-contain"
+                    className="w-6 h-6 object-contain"
                   />
                   <span className="text-xs font-bold text-[hsl(var(--primary))] font-sans">
                     Universitas Siber Muhammadiyyah

@@ -14,7 +14,7 @@ export const FooterSiberMu: React.FC = () => {
               <img
                 src={logoSibermu}
                 alt="Logo Universitas Siber Muhammadiyah"
-                className="w-10 h-10 object-contain bg-white/10 p-1.5 rounded-xl"
+                className="w-10 h-10 object-contain bg-white/10 p-1 rounded-xl"
               />
               <span className="headline-700 text-2xl tracking-tight text-white font-sans">
                 Kemahasiswaan & AIK
