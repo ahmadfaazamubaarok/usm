@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Conditions } from './components/Conditions';
-import { Services } from './components/Services';
-import { WhyMotion } from './components/WhyMotion';
-import { Physios } from './components/Physios';
-import { Process } from './components/Process';
-import { Testimonials } from './components/Testimonials';
-import { BookingCTA } from './components/BookingCTA';
-import { Footer } from './components/Footer';
+import { ProgramAIKSection } from './components/ProgramAIKSection';
+import { LayananMahasiswaSection } from './components/LayananMahasiswaSection';
+import { KeunggulanSiberMuSection } from './components/KeunggulanSiberMuSection';
+import { TimPembinaSection } from './components/TimPembinaSection';
+import { AlurSimkemaSection } from './components/AlurSimkemaSection';
+import { TestimoniSection } from './components/TestimoniSection';
+import { BannerSimkemaCTA } from './components/BannerSimkemaCTA';
+import { FooterSiberMu } from './components/FooterSiberMu';
 
-import { BookingModal } from './components/BookingModal';
-import { ConditionModal } from './components/ConditionModal';
-import { PhysioModal } from './components/PhysioModal';
+import { ModalFormSIMKEMA } from './components/modals/ModalFormSIMKEMA';
+import { ModalDetailProgram } from './components/modals/ModalDetailProgram';
+import { ModalDetailPembina } from './components/modals/ModalDetailPembina';
 import { Toast } from './components/Toast';
 
-import { conditionsData } from './data/conditions';
-import { servicesData } from './data/services';
-import { physiosData } from './data/physios';
-import { processStepsData } from './data/process';
-import { testimonialsData } from './data/testimonials';
-import type { Condition, Physio } from './types';
+import { programAikList } from './data/programAik';
+import { layananList } from './data/layanan';
+import { pembinaList } from './data/pembina';
+import { alurSimkemaList } from './data/alurSimkema';
+import { testimoniList } from './data/testimoni';
+import type { ProgramPilar, TimPembina } from './types';
 
 export const App: React.FC = () => {
   // Modal states
@@ -29,8 +29,8 @@ export const App: React.FC = () => {
   const [activeServiceId, setActiveServiceId] = useState<string | undefined>(undefined);
   const [activePhysioId, setActivePhysioId] = useState<string | undefined>(undefined);
 
-  const [selectedCondition, setSelectedCondition] = useState<Condition | null>(null);
-  const [selectedPhysio, setSelectedPhysio] = useState<Physio | null>(null);
+  const [selectedCondition, setSelectedCondition] = useState<ProgramPilar | null>(null);
+  const [selectedPhysio, setSelectedPhysio] = useState<TimPembina | null>(null);
 
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -54,70 +54,70 @@ export const App: React.FC = () => {
   };
 
   const handleSeeServices = () => {
-    const el = document.getElementById('services');
+    const el = document.getElementById('layanan-mahasiswa');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const handleBookingSuccess = (details: { service: string; physio: string; date: string; time: string }) => {
-    showToast(`Booking confirmed for ${details.service} with ${details.physio} on ${details.date}!`);
+    showToast(`Pengajuan berhasil terkirim ke SIMKEMA untuk ${details.service}! Check email untuk link Zoom.`);
   };
 
   return (
     <div className="min-h-screen bg-white text-[hsl(var(--foreground))] selection:bg-[hsl(var(--accent))/0.2]">
-      {/* 1. Sticky Navbar */}
+      {/* Navbar */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
       {/* Main Content Sections */}
       <main>
-        {/* 2. Hero Section */}
+        {/* 1. Hero Banner Utama */}
         <Hero
           onOpenBooking={() => handleOpenBooking()}
           onOpenFreeAssessment={handleOpenFreeAssessment}
           onSeeServices={handleSeeServices}
         />
 
-        {/* 3. Conditions Section */}
-        <Conditions
-          conditions={conditionsData}
-          onSelectCondition={(cond) => setSelectedCondition(cond)}
+        {/* 2. Seksi Program AIK & Kemahasiswaan Utama (2 Pilar Scope) */}
+        <ProgramAIKSection
+          programs={programAikList}
+          onSelectProgram={(program) => setSelectedCondition(program)}
         />
 
-        {/* 4. Services Section */}
-        <Services
-          services={servicesData}
-          onSelectService={(serviceId) => handleOpenBooking(serviceId)}
+        {/* 3. Seksi Layanan Mandiri Online */}
+        <LayananMahasiswaSection
+          layanan={layananList}
+          onSelectLayanan={(layananId) => handleOpenBooking(layananId)}
         />
 
-        {/* 5. Why Motion Section */}
-        <WhyMotion onOpenBooking={() => handleOpenBooking()} />
+        {/* 4. Seksi Keunggulan SiberMu */}
+        <KeunggulanSiberMuSection onOpenBooking={() => handleOpenBooking()} />
 
-        {/* 6. Our Physios Section */}
-        <Physios
-          physios={physiosData}
-          onSelectPhysio={(physio) => setSelectedPhysio(physio)}
-          onBookPhysio={(physioId) => handleOpenBooking(undefined, physioId)}
+        {/* 5. Seksi Tim Pembina & Pengelola */}
+        <TimPembinaSection
+          pembina={pembinaList}
+          onSelectPembina={(pembina) => setSelectedPhysio(pembina)}
+          onBookPembina={(pembinaId) => handleOpenBooking(undefined, pembinaId)}
         />
 
-        {/* 7. Process Section */}
-        <Process
-          steps={processStepsData}
+        {/* 6. Seksi Alur 4-Langkah SIMKEMA */}
+        <AlurSimkemaSection
+          steps={alurSimkemaList}
           onOpenBooking={() => handleOpenBooking()}
         />
 
-        {/* 8. Testimonials Section */}
-        <Testimonials testimonials={testimonialsData} />
+        {/* 7. Seksi Testimoni Mahasiswa PJJ */}
+        <TestimoniSection testimonies={testimoniList} />
 
-        {/* 9. Booking CTA Banner */}
-        <BookingCTA onOpenBooking={() => handleOpenBooking()} />
+        {/* 8. Banner CTA SIMKEMA */}
+        <BannerSimkemaCTA onOpenBooking={() => handleOpenBooking()} />
       </main>
 
-      {/* 10. Footer */}
-      <Footer />
+      {/* Footer */}
+      <FooterSiberMu />
 
       {/* Interactive Modals */}
-      <BookingModal
+      <ModalFormSIMKEMA
         isOpen={bookingModalOpen}
         onClose={() => setBookingModalOpen(false)}
         initialServiceId={activeServiceId}
@@ -126,19 +126,19 @@ export const App: React.FC = () => {
         onSuccess={handleBookingSuccess}
       />
 
-      <ConditionModal
-        condition={selectedCondition}
+      <ModalDetailProgram
+        program={selectedCondition}
         onClose={() => setSelectedCondition(null)}
-        onBookCondition={(conditionTitle) => {
-          showToast(`Initiated booking for ${conditionTitle} treatment.`);
+        onBookProgram={(programTitle) => {
+          showToast(`Mengakses portal pendaftaran untuk ${programTitle}...`);
           handleOpenBooking();
         }}
       />
 
-      <PhysioModal
-        physio={selectedPhysio}
+      <ModalDetailPembina
+        pembina={selectedPhysio}
         onClose={() => setSelectedPhysio(null)}
-        onBookPhysio={(physioId) => handleOpenBooking(undefined, physioId)}
+        onBookPembina={(pembinaId) => handleOpenBooking(undefined, pembinaId)}
       />
 
       {/* Toast Notification */}

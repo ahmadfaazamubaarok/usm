@@ -1,20 +1,20 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ShieldCheck, Award, Calendar, ArrowRight, Check } from 'lucide-react';
-import type { Physio } from '../types';
+import type { TimPembina } from '../../types';
 
-interface PhysioModalProps {
-  physio: Physio | null;
+interface ModalDetailPembinaProps {
+  pembina: TimPembina | null;
   onClose: () => void;
-  onBookPhysio: (physioId: string) => void;
+  onBookPembina: (pembinaId: string) => void;
 }
 
-export const PhysioModal: React.FC<PhysioModalProps> = ({
-  physio,
+export const ModalDetailPembina: React.FC<ModalDetailPembinaProps> = ({
+  pembina,
   onClose,
-  onBookPhysio
+  onBookPembina
 }) => {
-  if (!physio) return null;
+  if (!pembina) return null;
 
   return (
     <AnimatePresence>
@@ -29,15 +29,15 @@ export const PhysioModal: React.FC<PhysioModalProps> = ({
           <div className="px-6 py-5 bg-[hsl(var(--primary))] text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img
-                src={physio.image}
-                alt={physio.name}
+                src={pembina.image}
+                alt={pembina.name}
                 className="w-10 h-10 rounded-full object-cover border-2 border-white/30"
               />
               <div>
                 <h3 className="headline-700 text-lg text-white">
-                  {physio.name}
+                  {pembina.name}
                 </h3>
-                <p className="text-xs text-white/80">{physio.title}</p>
+                <p className="text-xs text-white/80">{pembina.title}</p>
               </div>
             </div>
             <button
@@ -51,30 +51,27 @@ export const PhysioModal: React.FC<PhysioModalProps> = ({
           {/* Body */}
           <div className="p-6 overflow-y-auto space-y-6">
             
-            {/* HCPC Badge Pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[hsl(var(--accent))/0.1] text-[hsl(var(--accent))] text-xs font-semibold">
               <ShieldCheck className="w-4 h-4" />
-              <span>{physio.hcpcChip}</span>
+              <span>{pembina.roleChip}</span>
             </div>
 
-            {/* Bio */}
             <div>
               <h4 className="headline-700 text-sm text-[hsl(var(--primary))] mb-2 font-sans">
-                About {physio.name}
+                Profil & Kepembinaan
               </h4>
               <p className="body-light text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
-                {physio.fullBio}
+                {pembina.fullBio}
               </p>
             </div>
 
-            {/* Qualifications */}
             <div>
               <h4 className="headline-700 text-sm text-[hsl(var(--primary))] mb-3 flex items-center gap-2 font-sans">
                 <Award className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>Qualifications & Accreditations</span>
+                <span>Kualifikasi & Kompetensi Pembina</span>
               </h4>
               <div className="space-y-2">
-                {physio.qualifications.map((qual, idx) => (
+                {pembina.qualifications.map((qual, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs text-[hsl(var(--foreground))]">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                     <span>{qual}</span>
@@ -83,15 +80,14 @@ export const PhysioModal: React.FC<PhysioModalProps> = ({
               </div>
             </div>
 
-            {/* Availability */}
             <div className="bg-[hsl(var(--surface))] p-4 rounded-xl border border-[hsl(var(--border))]">
               <div className="flex items-center gap-2 text-xs font-bold text-[hsl(var(--primary))] mb-2">
                 <Calendar className="w-4 h-4 text-[hsl(var(--accent))]" />
-                <span>Shoreditch Clinic Operating Days</span>
+                <span>Jadwal Bimbingan & Konseling Online</span>
               </div>
               <div className="flex gap-2">
                 {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => {
-                  const isAvail = physio.availableDays.includes(day);
+                  const isAvail = pembina.availableDays.includes(day);
                   return (
                     <span
                       key={day}
@@ -116,16 +112,16 @@ export const PhysioModal: React.FC<PhysioModalProps> = ({
               onClick={onClose}
               className="text-xs font-semibold text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]"
             >
-              Close
+              Tutup
             </button>
             <button
               onClick={() => {
                 onClose();
-                onBookPhysio(physio.id);
+                onBookPembina(pembina.id);
               }}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[hsl(var(--primary))] text-white text-xs font-semibold hover:bg-[hsl(215_60%_25%)] transition-colors shadow-xs"
             >
-              <span>Book appointment with {physio.name.split(' ')[1]}</span>
+              <span>Ajukan Konseling Online</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

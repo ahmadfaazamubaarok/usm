@@ -3,11 +3,11 @@ import { motion } from 'motion/react';
 import { Star, Quote } from 'lucide-react';
 import type { Testimonial } from '../types';
 
-interface TestimonialsProps {
-  testimonials: Testimonial[];
+interface TestimoniSectionProps {
+  testimonies: Testimonial[];
 }
 
-export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
+export const TestimoniSection: React.FC<TestimoniSectionProps> = ({ testimonies }) => {
   return (
     <section className="py-20 bg-[hsl(var(--surface))] border-t border-[hsl(var(--border))/0.6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,19 +15,19 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="label-caps text-[hsl(var(--accent))] mb-2 inline-block">
-            Verified Patient Outcomes
+            Suara Mahasiswa
           </span>
           <h2 className="headline-800 text-3xl sm:text-4xl lg:text-5xl text-[hsl(var(--foreground))] tracking-tight">
-            Trusted by Athletes & Shoreditch Locals
+            Pengalaman Mahasiswa PJJ SiberMu
           </h2>
           <p className="body-light text-[hsl(var(--muted-foreground))] text-base sm:text-lg mt-3">
-            Real stories from patients who restored full mobility and returned to pain-free performance.
+            Cerita inspiratif pengembangan potensi, raihan beasiswa, dan pembinaan karakter AIK dari 6 Program Studi.
           </p>
         </div>
 
         {/* 3 Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((item, index) => (
+          {testimonies.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 24 }}
@@ -55,7 +55,6 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                 </p>
               </div>
 
-              {/* Client Name + Condition in 10px Muted */}
               <div className="pt-4 border-t border-[hsl(var(--border))]">
                 <div className="headline-700 text-sm text-[hsl(var(--primary))] font-sans">
                   {item.name}

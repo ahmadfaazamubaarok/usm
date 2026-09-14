@@ -1,15 +1,26 @@
-export type Condition = {
+export type Prodi = {
   id: string;
+  code: string;
+  name: string;
+  degree: string;
+  category: 'Teknologi' | 'Bisnis' | 'Hukum' | 'Kesehatan';
+  icon: string;
+  desc: string;
+};
+
+export type ProgramPilar = {
+  id: string;
+  category: 'Kemahasiswaan' | 'Al-Islam & Kemuhammadiyahan';
   title: string;
   iconName: string;
   shortDesc: string;
   fullDesc: string;
-  symptoms: string[];
-  treatmentApproach: string[];
-  expectedRecovery: string;
+  targetProdi: string[];
+  kegiatanUtama: string[];
+  outputSertifikat: string;
 };
 
-export type Service = {
+export type LayananMahasiswa = {
   id: string;
   title: string;
   duration: string;
@@ -19,11 +30,11 @@ export type Service = {
   features: string[];
 };
 
-export type Physio = {
+export type TimPembina = {
   id: string;
   name: string;
   title: string;
-  hcpcChip: string;
+  roleChip: string;
   specialityBio: string;
   fullBio: string;
   qualifications: string[];
