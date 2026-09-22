@@ -208,19 +208,11 @@ export const FooterSiberMu: React.FC = () => {
               <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
                 <div className="flex items-center justify-between mb-1.5">
                   <span className="font-semibold text-white">3. Fotografi Mahasiswa & Profil Dosen</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">Unsplash License</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">Resmi & Islami SiberMu</span>
                 </div>
                 <p className="text-slate-300 text-xs leading-relaxed">
-                  Foto representasi kegiatan mahasiswa, suasana belajar siber, dan tim pembina bersumber dari fotografer di platform <strong>Unsplash</strong> dengan lisensi bebas royalti untuk kebutuhan komersial maupun non-komersial tanpa batasan izin.
+                  Foto representasi mahasiswi berhijab, mahasiswa santun berbusana batik, serta profil dewan pembina berpeci dan berbusana akademisi muslim dirancang khusus sesuai identitas Islami Berkemajuan Universitas Siber Muhammadiyah.
                 </p>
-                <a
-                  href="https://unsplash.com/license"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] text-[hsl(var(--accent))] hover:underline mt-1.5"
-                >
-                  unsplash.com/license <ExternalLink className="w-3 h-3" />
-                </a>
               </div>
 
               {/* 4. Logo & Identitas Kampus */}

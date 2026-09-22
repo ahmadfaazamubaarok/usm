@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Clock, Award, CalendarCheck, ShieldCheck } from 'lucide-react';
+import keunggulanDiskusiIslami from '../assets/keunggulan-diskusi-islami.jpg';
 
 interface KeunggulanSiberMuSectionProps {
   onOpenBooking: () => void;
@@ -104,8 +105,8 @@ export const KeunggulanSiberMuSection: React.FC<KeunggulanSiberMuSectionProps> =
               className="relative rounded-2xl overflow-hidden shadow-xl border border-[hsl(var(--border))]"
             >
               <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
-                alt="Mahasiswa SiberMu berdiskusi proyek inovasi siber"
+                src={keunggulanDiskusiIslami}
+                alt="Mahasiswa dan mahasiswi berhijab SiberMu berdiskusi proyek inovasi siber"
                 className="w-full h-[380px] sm:h-[480px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>

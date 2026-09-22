@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Award, CheckCircle2 } from 'lucide-react';
 import { prodiList } from '../data/prodi';
 import logoSibermu from '../assets/logo-sibermu.png';
+import heroMahasiswiIslami from '../assets/hero-mahasiswi-islami.jpg';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -108,8 +109,8 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Hero Photography Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[hsl(var(--border))] bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
-                  alt="Mahasiswa SiberMu berdiskusi dan mengikuti pembinaan AIK siber"
+                  src={heroMahasiswiIslami}
+                  alt="Mahasiswi SiberMu berhijab sedang belajar dengan laptop di kampus siber"
                   className="w-full h-[460px] sm:h-[520px] object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
